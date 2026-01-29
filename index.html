@@ -4,974 +4,1075 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Growth & Changes! - Grade 2 Science</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;600;700&family=Chewy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Chewy&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --green: #6BCF7F;
-            --lime: #84CC16;
-            --yellow: #FFD93D;
-            --orange: #FF9F1C;
-            --pink: #FF6B9D;
-            --purple: #9D4EDD;
-            --blue: #4D96FF;
-            --brown: #A0522D;
+            --forest-green: #2D5016;
+            --leaf-green: #65A30D;
+            --grass-bright: #84CC16;
+            --sky-blue: #38BDF8;
+            --sunset-orange: #FB923C;
+            --berry-pink: #F472B6;
+            --sunshine-yellow: #FACC15;
+            --earth-brown: #92400E;
+            --cream: #FEF3C7;
+            --dark-text: #1C1917;
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Fredoka', sans-serif;
-            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%);
-            color: #2D3748; overflow-x: hidden;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #FEF9C3 0%, #FDE68A 50%, #FDBA74 100%);
+            color: var(--dark-text);
+            overflow-x: hidden;
+            position: relative;
         }
-        .bg-shapes {
-            position: fixed; width: 100%; height: 100%; overflow: hidden; z-index: -1;
+
+        /* Animated background with animal silhouettes */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
         }
-        .shape {
-            position: absolute; border-radius: 50%; opacity: 0.3;
-            animation: float 20s infinite ease-in-out;
+        
+        .floating-animal {
+            position: absolute;
+            animation: drift 20s ease-in-out infinite;
+            opacity: 0.15;
+            font-size: 4rem;
+            filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.1));
         }
-        .shape:nth-child(1) { width: 100px; height: 100px; background: var(--green); top: 10%; left: 10%; animation-delay: 0s; }
-        .shape:nth-child(2) { width: 150px; height: 150px; background: var(--lime); top: 50%; left: 70%; animation-delay: 5s; }
-        .shape:nth-child(3) { width: 80px; height: 80px; background: var(--yellow); top: 70%; left: 20%; animation-delay: 10s; }
-        .shape:nth-child(4) { width: 120px; height: 120px; background: var(--orange); top: 30%; left: 80%; animation-delay: 15s; }
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(30px, -30px) rotate(90deg); }
-            50% { transform: translate(0, -60px) rotate(180deg); }
-            75% { transform: translate(-30px, -30px) rotate(270deg); }
+        
+        .floating-animal:nth-child(1) { top: 5%; left: 5%; animation-duration: 18s; }
+        .floating-animal:nth-child(2) { top: 70%; left: 85%; animation-duration: 22s; animation-delay: 3s; }
+        .floating-animal:nth-child(3) { top: 25%; left: 75%; animation-duration: 16s; animation-delay: 5s; }
+        .floating-animal:nth-child(4) { top: 85%; left: 15%; animation-duration: 24s; animation-delay: 2s; }
+        .floating-animal:nth-child(5) { top: 45%; left: 60%; animation-duration: 19s; animation-delay: 7s; }
+        .floating-animal:nth-child(6) { top: 60%; left: 30%; animation-duration: 21s; animation-delay: 4s; }
+        
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(40px, -50px) rotate(8deg) scale(1.1); }
+            50% { transform: translate(-20px, -30px) rotate(-5deg) scale(0.95); }
+            75% { transform: translate(30px, -40px) rotate(6deg) scale(1.05); }
         }
+        
         header {
-            background: linear-gradient(135deg, var(--green) 0%, var(--lime) 50%, #22C55E 100%);
-            padding: 3rem 2rem; text-align: center; position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;
+            background: linear-gradient(135deg, var(--leaf-green) 0%, var(--forest-green) 50%, var(--grass-bright) 100%);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 60px rgba(45, 80, 22, 0.4);
+            overflow: hidden;
+            border-bottom: 8px solid var(--sunshine-yellow);
         }
+        
         header::before {
-            content: '🐾'; position: absolute; font-size: 10rem; opacity: 0.15;
-            top: -20px; left: 5%; animation: bounce 3s infinite;
+            content: '🦋';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.12;
+            top: -50px;
+            left: -20px;
+            animation: flutter 5s ease-in-out infinite;
         }
+        
         header::after {
-            content: '🦋'; position: absolute; font-size: 10rem; opacity: 0.15;
-            top: -20px; right: 5%; animation: flutter 4s infinite;
+            content: '🐸';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.12;
+            top: -50px;
+            right: -20px;
+            animation: hop 4s ease-in-out infinite 1s;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
+        
         @keyframes flutter {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-35px) rotate(5deg); }
         }
+        
+        @keyframes hop {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+        
         h1 {
-            font-family: 'Bubblegum Sans', cursive; font-size: 4rem; color: white;
-            text-shadow: 4px 4px 0 var(--green), 8px 8px 0 var(--lime), 12px 12px 30px rgba(0,0,0,0.3);
-            margin-bottom: 1rem; animation: wiggle 2s ease-in-out infinite;
+            font-family: 'Chewy', cursive;
+            font-size: 5rem;
+            color: var(--sunshine-yellow);
+            text-shadow: 
+                4px 4px 0 var(--forest-green),
+                8px 8px 0 rgba(0,0,0,0.2),
+                0 0 30px rgba(250, 204, 21, 0.5);
+            margin-bottom: 0.8rem;
+            animation: wiggle 4s ease-in-out infinite;
+            letter-spacing: 2px;
         }
+        
         @keyframes wiggle {
-            0%, 100% { transform: rotate(-1deg); }
-            50% { transform: rotate(1deg); }
+            0%, 100% { transform: rotate(-1deg) scale(1); }
+            25% { transform: rotate(1deg) scale(1.02); }
+            50% { transform: rotate(-0.5deg) scale(1); }
+            75% { transform: rotate(0.5deg) scale(1.02); }
         }
+        
         .subtitle {
-            font-family: 'Chewy', cursive; font-size: 2rem; color: white;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.8rem;
+            color: white;
+            text-shadow: 
+                3px 3px 0 var(--forest-green),
+                6px 6px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            animation: bounce-subtle 3s ease-in-out infinite;
         }
+        
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
         nav {
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            padding: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            position: sticky; top: 0; z-index: 100; border-bottom: 5px solid var(--lime);
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.8rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 5px solid var(--leaf-green);
         }
+        
         nav.hidden { display: none; }
+        
         .nav-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem; max-width: 1400px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
         }
+        
         .nav-btn {
-            background: linear-gradient(135deg, var(--green), var(--lime));
-            color: white; border: none; padding: 1.2rem 0.8rem; border-radius: 20px;
-            font-family: 'Fredoka', sans-serif; font-size: 0.85rem; font-weight: 700;
-            cursor: pointer; transition: all 0.3s; box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, var(--grass-bright), var(--leaf-green));
+            color: white;
+            border: none;
+            padding: 1.5rem 1.2rem;
+            border-radius: 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 0 var(--forest-green), 0 15px 30px rgba(45, 80, 22, 0.3);
             text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
         }
-        .nav-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 0 rgba(0,0,0,0.2); }
+        
+        .nav-btn::before {
+            content: '🌟';
+            position: absolute;
+            left: -40px;
+            font-size: 1.8rem;
+            transition: left 0.4s;
+        }
+        
+        .nav-btn:hover::before {
+            left: 15px;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 16px 0 var(--forest-green), 0 25px 40px rgba(45, 80, 22, 0.4);
+        }
+        
+        .nav-btn:active {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 0 var(--forest-green);
+        }
+        
         .nav-btn.active {
-            background: linear-gradient(135deg, var(--pink), var(--purple));
-            animation: pulse 1.5s infinite;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--berry-pink));
+            animation: pulse-glow 2s infinite;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        
+        .nav-btn:disabled {
+            background: linear-gradient(135deg, #D1D5DB, #9CA3AF);
+            cursor: not-allowed;
+            opacity: 0.5;
         }
+        
+        .nav-btn:disabled::before {
+            content: '🔒';
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 8px 0 var(--forest-green), 0 15px 30px rgba(251, 146, 60, 0.5);
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 0 8px 0 var(--forest-green), 0 20px 40px rgba(251, 146, 60, 0.7);
+            }
+        }
+        
         .back-button {
-            display: none; position: fixed; top: 20px; left: 20px; z-index: 101;
-            background: linear-gradient(135deg, var(--green), var(--lime));
-            color: white; border: none; padding: 1rem 2rem; border-radius: 15px;
-            font-family: 'Fredoka', sans-serif; font-size: 1.2rem; font-weight: 700;
-            cursor: pointer; box-shadow: 0 8px 20px rgba(107, 207, 127, 0.4);
+            display: none;
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 101;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--berry-pink));
+            color: white;
+            border: none;
+            padding: 1.3rem 2.8rem;
+            border-radius: 25px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 
+                0 6px 0 var(--earth-brown),
+                0 12px 30px rgba(251, 146, 60, 0.5);
             transition: all 0.3s;
         }
-        .back-button:hover { transform: translateY(-3px) scale(1.05); }
-        .back-button.show { display: block; animation: slideInLeft 0.5s; }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+        
+        .back-button:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 
+                0 12px 0 var(--earth-brown),
+                0 20px 40px rgba(251, 146, 60, 0.6);
         }
-        .bottom-back-button { display: none; margin: 3rem auto; padding: 1.5rem 3rem; font-size: 1.3rem; }
-        .bottom-back-button.show { display: block; }
-        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
-        .page { display: none; animation: fadeInUp 0.6s; }
-        .page.active { display: block; }
+        
+        .back-button.show {
+            display: block;
+            animation: bounceIn 0.8s;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: translateX(-100px) scale(0.8); }
+            50% { transform: translateX(10px) scale(1.1); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        
+        .bottom-back-button {
+            display: none;
+            margin: 3.5rem auto;
+            padding: 2rem 4rem;
+            font-size: 1.6rem;
+        }
+        
+        .bottom-back-button.show {
+            display: block;
+            animation: fadeInUp 0.8s;
+        }
+        
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .card {
-            background: white; border-radius: 30px; padding: 3rem; margin-bottom: 2rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 6px solid;
-            position: relative; overflow: hidden;
-        }
-        .card h2 {
-            font-family: 'Bubblegum Sans', cursive; font-size: 3rem; margin-bottom: 1.5rem;
-            color: var(--green); text-shadow: 3px 3px 0 var(--lime);
-        }
-        .card h3 {
-            font-family: 'Chewy', cursive; font-size: 2.2rem; margin: 2rem 0 1.5rem;
-            color: var(--purple);
-        }
-        .card p, .card li {
-            font-size: 1.3rem; line-height: 1.8; margin-bottom: 1rem; font-weight: 500;
-        }
-        .card ul { margin-left: 2rem; }
         
-        /* Click-to-read audio styles */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .unit {
+            display: none;
+            animation: slideIn 0.7s;
+        }
+        
+        .unit.active {
+            display: block;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 
+                0 15px 50px rgba(0,0,0,0.15),
+                inset 0 -5px 0 var(--cream);
+            border: 5px solid var(--grass-bright);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--berry-pink) 0%, 
+                var(--sunset-orange) 25%, 
+                var(--sunshine-yellow) 50%, 
+                var(--grass-bright) 75%, 
+                var(--sky-blue) 100%);
+            animation: rainbow-slide 3s linear infinite;
+        }
+        
+        @keyframes rainbow-slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .content-card h2 {
+            font-family: 'Chewy', cursive;
+            font-size: 3rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 0 var(--cream);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .content-card h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2rem;
+            color: var(--leaf-green);
+            margin: 2rem 0 1rem;
+            font-weight: 700;
+        }
+        
         .clickable-audio {
             cursor: pointer;
-            position: relative;
+            padding: 0.3rem;
+            border-radius: 8px;
             transition: all 0.3s;
-            padding: 0.5rem;
-            border-radius: 10px;
+            display: inline-block;
         }
+        
         .clickable-audio:hover {
-            background: rgba(107, 207, 127, 0.2);
-            transform: translateX(5px);
+            background: var(--cream);
+            transform: scale(1.02);
         }
-        .clickable-audio::before {
-            content: '🔊';
-            position: absolute;
-            left: -30px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 1.2rem;
-        }
-        .clickable-audio:hover::before {
-            opacity: 0.6;
-        }
+        
         .clickable-audio.speaking {
-            background: rgba(132, 204, 22, 0.3);
-            animation: pulse-speak 1s infinite;
+            background: linear-gradient(90deg, var(--sunshine-yellow), var(--sunset-orange));
+            animation: audio-pulse 1s infinite;
+            color: white;
+            font-weight: 700;
         }
-        .clickable-audio.speaking::before {
-            content: '🔊';
-            opacity: 1;
-            animation: bounce-speaker 0.5s infinite;
-        }
-        @keyframes pulse-speak {
-            0%, 100% { background: rgba(132, 204, 22, 0.3); }
-            50% { background: rgba(132, 204, 22, 0.5); }
-        }
-        @keyframes bounce-speaker {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        .example-card.clickable-audio::before {
-            left: 10px;
-            top: 10px;
-        }
-        .audio-controls {
-            text-align: center; margin: 2rem 0; padding: 1.5rem;
-            background: rgba(157, 78, 221, 0.1); border-radius: 15px;
-            border: 3px solid var(--purple);
-        }
-        .example-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem; margin: 2rem 0;
-        }
-        .example-card {
-            background: white; border-radius: 20px; padding: 2rem; text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 5px solid;
-            transition: all 0.4s; cursor: pointer;
-        }
-        .example-card:hover { transform: translateY(-15px) rotate(-5deg); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
-        .icon {
-            font-size: 5rem; margin-bottom: 1rem; display: block;
-            animation: bounce-icon 2s ease-in-out infinite;
-        }
-        @keyframes bounce-icon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        .example-card h4 { font-family: 'Chewy', cursive; font-size: 1.6rem; margin-bottom: 0.8rem; }
-        .example-card p { font-size: 1.1rem; line-height: 1.5; }
-        .activity-box {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-            border-radius: 25px; padding: 3rem; margin: 2rem 0;
-            border: 6px solid var(--yellow); box-shadow: 0 10px 30px rgba(255,211,61,0.3);
-        }
-        .activity-box h3 {
-            color: #D97706; font-size: 2.5rem; margin-bottom: 1.5rem;
-            font-family: 'Bubblegum Sans', cursive;
-        }
-        .quiz-box {
-            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
-            border-radius: 25px; padding: 3rem; margin: 2rem 0;
-            border: 6px solid var(--blue); box-shadow: 0 10px 30px rgba(77,150,255,0.3);
-        }
-        .quiz-box h3 {
-            color: #1E40AF; font-size: 2.5rem; margin-bottom: 1.5rem;
-            font-family: 'Bubblegum Sans', cursive;
-        }
-        .question {
-            background: white; border-radius: 20px; padding: 2rem; margin: 1.5rem 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-left: 8px solid var(--green);
-        }
-        .question h4 { font-size: 1.4rem; margin-bottom: 1.5rem; font-weight: 700; }
-        .options { display: flex; flex-direction: column; gap: 1rem; }
-        .option {
-            background: #F3F4F6; padding: 1.5rem; border-radius: 15px; cursor: pointer;
-            transition: all 0.3s; border: 4px solid transparent; font-size: 1.2rem; font-weight: 600;
-        }
-        .option:hover {
-            background: #E5E7EB; transform: translateX(10px) scale(1.02);
-            border-color: var(--green);
-        }
-        .option.selected {
-            border-color: var(--green); background: #D1FAE5; transform: translateX(10px);
-        }
-        .option.correct {
-            border-color: var(--lime); background: #D1FAE5; animation: correctBounce 0.6s;
-        }
-        @keyframes correctBounce {
+        
+        @keyframes audio-pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        .option.incorrect {
-            border-color: var(--pink); background: #FEE2E2; animation: shake 0.6s;
+        
+        p {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 1.2rem;
+            color: var(--dark-text);
         }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
+        
+        .example-box {
+            background: linear-gradient(135deg, var(--cream), #FEF3C7);
+            border-left: 8px solid var(--sunset-orange);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.2);
         }
-        .feedback {
-            margin-top: 1.5rem; padding: 2rem; border-radius: 15px; font-weight: 700;
-            display: none; font-size: 1.3rem;
+        
+        .example-box h4 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            color: var(--earth-brown);
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
-        .feedback.show { display: block; animation: popIn 0.5s; }
-        @keyframes popIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
-        .feedback.correct {
-            background: #D1FAE5; color: #065F46; border: 4px solid var(--green);
+        
+        .example-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 3px solid var(--grass-bright);
         }
-        .feedback.incorrect {
-            background: #FEE2E2; color: #991B1B; border: 4px solid var(--pink);
+        
+        .example-item:hover {
+            transform: translateY(-8px) rotate(2deg);
+            box-shadow: 0 12px 30px rgba(132, 204, 22, 0.3);
         }
-        .score-display {
-            background: white; padding: 3rem; border-radius: 20px; text-align: center;
-            font-size: 2rem; font-weight: 800; margin-top: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 5px solid var(--green);
+        
+        .example-item .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bob 2s ease-in-out infinite;
         }
-        .btn {
-            background: linear-gradient(135deg, var(--green), var(--lime));
-            color: white; border: none; padding: 1.5rem 3rem; border-radius: 20px;
-            font-family: 'Fredoka', sans-serif; font-size: 1.3rem; font-weight: 700;
-            cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 0 rgba(0,0,0,0.2);
-            text-transform: uppercase;
+        
+        @keyframes bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        .btn:hover { transform: translateY(-6px); box-shadow: 0 12px 0 rgba(0,0,0,0.2); }
-        .btn:active { transform: translateY(-2px); box-shadow: 0 5px 0 rgba(0,0,0,0.2); }
-        .btn-check { background: linear-gradient(135deg, var(--green), var(--lime)); }
-        .btn-reset { background: linear-gradient(135deg, var(--orange), var(--yellow)); }
-        .btn-audio { background: linear-gradient(135deg, var(--purple), var(--pink)); }
-        .button-group { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
+        
+        .activity-section {
+            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 5px solid var(--sky-blue);
+            box-shadow: 0 15px 50px rgba(56, 189, 248, 0.3);
+        }
+        
+        .activity-section h3 {
+            font-family: 'Chewy', cursive;
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 0 white;
+        }
+        
+        .drag-drop-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .drag-items {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 300px;
+            border: 4px dashed var(--grass-bright);
+        }
+        
+        .drag-items h4 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            color: var(--leaf-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
         .drag-item {
-            background: white; padding: 1.5rem; border-radius: 15px; cursor: move;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15); border: 4px solid var(--green);
-            font-size: 1.2rem; text-align: center; font-weight: 700;
-            transition: all 0.3s; margin: 0.8rem; display: inline-block;
-        }
-        .drag-item:hover { transform: rotate(-5deg) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
-        .drop-zone {
-            background: rgba(107, 207, 127, 0.1); border: 5px dashed var(--green);
-            border-radius: 20px; padding: 2.5rem; min-height: 180px; margin: 1.5rem 0;
-            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;
-            justify-content: center; transition: all 0.3s;
-        }
-        .drop-zone.drag-over {
-            background: rgba(107, 207, 127, 0.3); transform: scale(1.02);
-            border-color: var(--pink);
-        }
-        input[type="text"] {
-            border: 3px solid var(--green); padding: 0.8rem; font-size: 1.2rem;
-            border-radius: 10px; font-family: 'Fredoka', sans-serif; font-weight: 700;
+            background: linear-gradient(135deg, var(--sunshine-yellow), var(--sunset-orange));
+            color: var(--dark-text);
+            padding: 1.2rem;
+            margin: 0.8rem 0;
+            border-radius: 15px;
+            cursor: grab;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            border: 4px solid var(--cream);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             transition: all 0.3s;
         }
-        input[type="text"]:focus {
-            outline: none; border-color: var(--pink);
-            box-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+        
+        .drag-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        .home-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem; margin: 3rem 0;
+        
+        .drag-item:active {
+            cursor: grabbing;
+            transform: scale(0.95);
         }
-        .topic-card {
-            background: white; border-radius: 25px; padding: 2.5rem; text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2); cursor: pointer;
-            transition: all 0.4s; border: 6px solid; position: relative;
+        
+        .drop-zones {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-        .topic-card:hover {
-            transform: translateY(-20px) scale(1.05); box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        
+        .drop-zone {
+            background: white;
+            border: 4px dashed var(--berry-pink);
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 150px;
+            transition: all 0.3s;
         }
-        .topic-card .icon { font-size: 5rem; margin-bottom: 1rem; }
-        .topic-card h3 { margin: 1rem 0; font-size: 1.5rem; }
-        .topic-card p { font-size: 1.1rem; }
+        
+        .drop-zone h4 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            color: var(--berry-pink);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .drop-zone.drag-over {
+            background: linear-gradient(135deg, #FDE68A, #FCA5A5);
+            border-color: var(--sunset-orange);
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(251, 146, 60, 0.4);
+        }
+        
+        .activity-controls {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--grass-bright), var(--leaf-green));
+            color: white;
+            border: none;
+            padding: 1.5rem 3rem;
+            border-radius: 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 0 var(--forest-green), 0 15px 30px rgba(45, 80, 22, 0.3);
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+        
+        .btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 0 var(--forest-green), 0 25px 40px rgba(45, 80, 22, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 var(--forest-green);
+        }
+        
+        .btn.secondary {
+            background: linear-gradient(135deg, var(--sunset-orange), var(--berry-pink));
+        }
+        
+        .feedback {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 20px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            animation: popIn 0.5s;
+        }
+        
+        .feedback.show {
+            display: block;
+        }
+        
+        .feedback.correct {
+            background: linear-gradient(135deg, #D9F99D, #A3E635);
+            color: var(--forest-green);
+            border: 4px solid var(--grass-bright);
+        }
+        
+        .feedback.incorrect {
+            background: linear-gradient(135deg, #FED7AA, #FDBA74);
+            color: var(--earth-brown);
+            border: 4px solid var(--sunset-orange);
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .quiz-section {
+            background: linear-gradient(135deg, #FCE7F3, #FBCFE8);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 5px solid var(--berry-pink);
+            box-shadow: 0 15px 50px rgba(244, 114, 182, 0.3);
+        }
+        
+        .quiz-section h3 {
+            font-family: 'Chewy', cursive;
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 0 white;
+        }
+        
+        .question {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 4px solid var(--cream);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .question-text {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .option {
+            background: linear-gradient(135deg, var(--cream), #FEF3C7);
+            padding: 1.3rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 3px solid var(--sunshine-yellow);
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: linear-gradient(135deg, var(--sunshine-yellow), var(--sunset-orange));
+            transform: translateX(10px);
+            box-shadow: 0 6px 20px rgba(251, 146, 60, 0.3);
+        }
+        
+        .option.selected {
+            background: linear-gradient(135deg, var(--sky-blue), #38BDF8);
+            color: white;
+            border-color: var(--sky-blue);
+            transform: scale(1.03);
+        }
+        
+        .option.correct {
+            background: linear-gradient(135deg, var(--grass-bright), #65A30D);
+            color: white;
+            border-color: var(--leaf-green);
+            animation: celebrate 0.6s;
+        }
+        
+        .option.incorrect {
+            background: linear-gradient(135deg, #FCA5A5, #F87171);
+            color: white;
+            border-color: #DC2626;
+        }
+        
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05) rotate(2deg); }
+            75% { transform: scale(1.05) rotate(-2deg); }
+        }
+        
+        .quiz-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+        
+        #quiz-score {
+            display: none;
+            margin-top: 2.5rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--sunshine-yellow), var(--sunset-orange));
+            border-radius: 25px;
+            text-align: center;
+            border: 5px solid var(--earth-brown);
+            box-shadow: 0 15px 50px rgba(251, 146, 60, 0.5);
+            animation: popIn 0.7s;
+        }
+        
+        #quiz-score h3 {
+            font-family: 'Chewy', cursive;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 3px 3px 0 var(--earth-brown);
+            margin-bottom: 1rem;
+        }
+        
+        #quiz-score p {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+        
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.5rem; }
+            h1 { font-size: 3.5rem; }
+            .subtitle { font-size: 2rem; }
             .nav-grid { grid-template-columns: 1fr; }
-            .card { padding: 2rem; }
-            .card h2 { font-size: 2.2rem; }
-            .back-button { top: 10px; left: 10px; padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .drag-drop-container { grid-template-columns: 1fr; }
+            .content-card { padding: 2rem; }
+            .content-card h2 { font-size: 2.2rem; }
+            .example-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+    <div class="bg-animation">
+        <div class="floating-animal">🐰</div>
+        <div class="floating-animal">🦋</div>
+        <div class="floating-animal">🐢</div>
+        <div class="floating-animal">🐸</div>
+        <div class="floating-animal">🦆</div>
+        <div class="floating-animal">🐛</div>
     </div>
 
     <header>
-        <h1>🐾 Animal Growth! 🦋</h1>
-        <p class="subtitle">Discover How Animals Grow and Change!</p>
+        <h1>Animal Growth & Changes! 🐾</h1>
+        <p class="subtitle">Grade 2 Science Adventure</p>
     </header>
 
-    <nav>
+    <button class="back-button" onclick="showHome()">⬅ Back to Units</button>
+
+    <nav id="main-nav">
         <div class="nav-grid">
-            <button class="nav-btn active" onclick="showPage('home', event)">🏠 Home</button>
-            <button class="nav-btn" onclick="showPage('b11', event)">B1.1 - Animal Impacts</button>
-            <button class="nav-btn" onclick="showPage('b12', event)">B1.2 - Human Impacts</button>
-            <button class="nav-btn" onclick="showPage('b21', event)">B2.1 - Characteristics</button>
-            <button class="nav-btn" onclick="showPage('b22', event)">B2.2 - Locomotion</button>
-            <button class="nav-btn" onclick="showPage('b23', event)">B2.3 - Life Cycles</button>
-            <button class="nav-btn" onclick="showPage('b24', event)">B2.4 - Changes</button>
-            <button class="nav-btn" onclick="showPage('b25', event)">B2.5 - Adaptations</button>
+            <button class="nav-btn active" onclick="showUnit('b11')">
+                B1.1: Humans & Animals
+            </button>
+            <button class="nav-btn" disabled>
+                B1.2: Animal Adaptations
+            </button>
+            <button class="nav-btn" disabled>
+                B2.1: Animal Bodies
+            </button>
+            <button class="nav-btn" disabled>
+                B2.2: Body Adaptations
+            </button>
+            <button class="nav-btn" disabled>
+                B2.3: Life Cycles
+            </button>
+            <button class="nav-btn" disabled>
+                B2.4: Surviving Changes
+            </button>
+            <button class="nav-btn" disabled>
+                B2.5: Helping Animals
+            </button>
         </div>
     </nav>
 
-    <button class="back-button" id="backButton" onclick="showPage('home', event)">
-        ← Back to Lessons
-    </button>
-
-    <div class="container">
-        <div id="home" class="page active">
-            <div class="card" style="border-color: var(--green);">
-                <h2>Welcome, Animal Lovers! 🎉</h2>
-                <p>Get ready to explore <strong>ANIMAL GROWTH and CHANGES</strong>! You'll learn how animals live, grow, move, and change!</p>
-                <p>Click on any topic below to start your adventure. Let's discover amazing animals! 🐾</p>
-            </div>
-
-            <div class="home-grid">
-                <div class="topic-card" style="border-color: var(--green);" onclick="showPage('b11', event)">
-                    <div class="icon">🌍</div>
-                    <h3>Animal Impacts</h3>
-                    <p>How animals affect us!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--lime);" onclick="showPage('b12', event)">
-                    <div class="icon">🏡</div>
-                    <h3>Human Impacts</h3>
-                    <p>How we affect animals!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--yellow);" onclick="showPage('b21', event)">
-                    <div class="icon">👀</div>
-                    <h3>Characteristics</h3>
-                    <p>What animals look like!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--orange);" onclick="showPage('b22', event)">
-                    <div class="icon">🏃</div>
-                    <h3>Locomotion</h3>
-                    <p>How animals move!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--pink);" onclick="showPage('b23', event)">
-                    <div class="icon">🔄</div>
-                    <h3>Life Cycles</h3>
-                    <p>Egg to adult!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--purple);" onclick="showPage('b24', event)">
-                    <div class="icon">🦋</div>
-                    <h3>Changes</h3>
-                    <p>Growing up!</p>
-                </div>
-                <div class="topic-card" style="border-color: var(--blue);" onclick="showPage('b25', event)">
-                    <div class="icon">🦎</div>
-                    <h3>Adaptations</h3>
-                    <p>Survival skills!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- B1.1 PAGE -->
-        <div id="b11" class="page">
-            <div class="card" style="border-color: var(--green);">
-                <h2>B1.1 - Animal Impacts 🌍</h2>
-                <p>Animals have <strong>effects on people and the environment</strong>! Some are helpful, and we need to manage any problems!</p>
+    <main>
+        <!-- Unit B1.1: Humans & Animals -->
+        <section id="b11" class="unit active">
+            <div class="content-card">
+                <h2>🏭 How Humans Affect Animals</h2>
                 
-                <div class="audio-controls">
-                    <button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b11">🔊 Read This Page Aloud</button>
-                    <button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b11" style="display: none;">⏸️ Stop Reading</button>
-                    <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--purple); font-weight: 600;">💡 Click on any text or card to hear it read aloud!</p>
+                <p class="clickable-audio">
+                    Animals live all around us! They live in forests, oceans, rivers, deserts, and even in our cities. 
+                    But sometimes, the things people do can change where animals live and how they live.
+                </p>
+                
+                <p class="clickable-audio">
+                    When we build houses, roads, and shopping centers, we might cut down trees or fill in ponds. 
+                    This is called changing an animal's <strong>habitat</strong>. A habitat is the place where an animal lives and finds food, water, and shelter.
+                </p>
+
+                <h3>🌳 What is a Habitat?</h3>
+                <p class="clickable-audio">
+                    A habitat is like an animal's home and neighborhood all together! It has everything the animal needs to survive: 
+                    food to eat, water to drink, places to hide from danger, and space to raise babies.
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">🏡 Animal Habitats Examples:</h4>
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <div class="icon">🐿️</div>
+                            <p class="clickable-audio"><strong>Squirrels</strong> live in forests and parks where they can find trees for shelter and nuts to eat.</p>
+                        </div>
+                        <div class="example-item">
+                            <div class="icon">🐸</div>
+                            <p class="clickable-audio"><strong>Frogs</strong> need ponds and wetlands where they can swim, catch insects, and lay their eggs in water.</p>
+                        </div>
+                        <div class="example-item">
+                            <div class="icon">🦅</div>
+                            <p class="clickable-audio"><strong>Eagles</strong> need tall trees or cliffs near rivers where they can build nests and hunt for fish.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <h3>Helpful Animals ✨</h3>
+                <h3>😟 How Do Humans Change Animal Habitats?</h3>
+                <p class="clickable-audio">
+                    There are many ways that human activities can affect animals and their homes:
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Ways Humans Impact Animals:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🏗️ Building and Construction:</strong> When we build new houses, schools, or roads, we might cut down forests or fill in wetlands. Animals that lived there need to find new homes.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🗑️ Pollution and Litter:</strong> Trash and chemicals can hurt animals. Plastic bags in the ocean can harm sea turtles who think they are jellyfish. Oil spills make birds' feathers dirty so they can't fly.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🎣 Overfishing and Hunting:</strong> Taking too many fish from the ocean or hunting too many animals means there aren't enough left. This can make some animals very rare.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🌡️ Climate Change:</strong> When we drive cars and use lots of electricity, it can make the Earth warmer. This melts ice where polar bears live and makes it harder for them to find food.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🔊 Noise and Light:</strong> Loud sounds from cars and bright lights at night can confuse animals. Birds might fly into lit-up buildings, and whales can get confused by ship noises.
+                    </p>
+                </div>
+
+                <h3>🐻 Real Examples of Impact</h3>
                 <div class="example-grid">
-                    <div class="example-card" style="border-color: var(--green);">
+                    <div class="example-item">
                         <div class="icon">🐝</div>
-                        <h4>Bees</h4>
-                        <p>Pollinate flowers!</p>
+                        <p class="clickable-audio"><strong>Bees:</strong> When people use chemicals on farms, it can hurt bees. Bees are important because they help flowers grow!</p>
                     </div>
-                    <div class="example-card" style="border-color: var(--lime);">
-                        <div class="icon">🐕</div>
-                        <h4>Dogs</h4>
-                        <p>Help and protect us!</p>
+                    <div class="example-item">
+                        <div class="icon">🐢</div>
+                        <p class="clickable-audio"><strong>Sea Turtles:</strong> Beach lights confuse baby turtles trying to find the ocean. They get lost and can't reach the water safely.</p>
                     </div>
-                    <div class="example-card" style="border-color: var(--yellow);">
-                        <div class="icon">🐄</div>
-                        <h4>Farm Animals</h4>
-                        <p>Give us food!</p>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Salamanders:</strong> When roads are built through forests, salamanders can't safely cross to find water. Many get hurt trying to cross.</p>
                     </div>
-                    <div class="example-card" style="border-color: var(--orange);">
-                        <div class="icon">🪱</div>
-                        <h4>Worms</h4>
-                        <p>Make soil healthy!</p>
-                    </div>
-                </div>
-
-                <h3>Managing Problems 🛡️</h3>
-                <div class="example-grid">
-                    <div class="example-card" style="border-color: var(--pink);">
-                        <div class="icon">🗑️</div>
-                        <h4>Secure Garbage</h4>
-                        <p>Keep animals safe!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--purple);">
-                        <div class="icon">🌳</div>
-                        <h4>Plant Native</h4>
-                        <p>Good for wildlife!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--blue);">
-                        <div class="icon">🚫</div>
-                        <h4>Don't Feed Wild</h4>
-                        <p>Keep them wild!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--green);">
-                        <div class="icon">♻️</div>
-                        <h4>Reduce Waste</h4>
-                        <p>Clean environment!</p>
-                    </div>
-                </div>
-
-                <div class="activity-box">
-                    <h3>🎯 Activity 1: Drag & Drop!</h3>
-                    
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; margin: 2rem 0;" id="b11-drag-items">
-                        <div class="drag-item" draggable="true" data-category="helpful">🐝 Bees pollinate</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🐕 Dogs help</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🐄 Cows give milk</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🪱 Worms help soil</div>
-                        <div class="drag-item" draggable="true" data-category="problem">🦝 Get in garbage</div>
-                        <div class="drag-item" draggable="true" data-category="problem">🐀 Damage crops</div>
-                        <div class="drag-item" draggable="true" data-category="problem">🦟 Spread disease</div>
-                        <div class="drag-item" draggable="true" data-category="problem">🐜 Invade homes</div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-                        <div>
-                            <h4 style="text-align: center; color: var(--green); font-size: 1.5rem;">HELPFUL</h4>
-                            <div class="drop-zone" data-category="helpful"></div>
-                        </div>
-                        <div>
-                            <h4 style="text-align: center; color: var(--green); font-size: 1.5rem;">PROBLEMS</h4>
-                            <div class="drop-zone" data-category="problem"></div>
-                        </div>
-                    </div>
-
-                    <div class="button-group">
-                        <button class="btn btn-check" onclick="checkB11DragDrop()">Check Sorting!</button>
-                        <button class="btn btn-reset" onclick="resetB11DragDrop()">Reset</button>
-                    </div>
-                    <div id="b11-drag-feedback" class="feedback"></div>
-                </div>
-
-                <div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); border-color: var(--blue);">
-                    <h3>🎯 Activity 2: Fill in the Blanks!</h3>
-                    
-                    <div style="display: grid; gap: 2rem; margin: 2rem 0;">
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--green);">
-                            <p style="font-weight: 700; font-size: 1.2rem; line-height: 2;">
-                                1. Bees help <input type="text" id="b11-blank1" style="width: 200px;"> flowers.
-                            </p>
-                        </div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--green);">
-                            <p style="font-weight: 700; font-size: 1.2rem; line-height: 2;">
-                                2. Dogs can <input type="text" id="b11-blank2" style="width: 200px;"> us.
-                            </p>
-                        </div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--green);">
-                            <p style="font-weight: 700; font-size: 1.2rem; line-height: 2;">
-                                3. We should secure our <input type="text" id="b11-blank3" style="width: 200px;">.
-                            </p>
-                        </div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--green);">
-                            <p style="font-weight: 700; font-size: 1.2rem; line-height: 2;">
-                                4. Animals can affect the <input type="text" id="b11-blank4" style="width: 200px;">.
-                            </p>
-                        </div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--green);">
-                            <p style="font-weight: 700; font-size: 1.2rem; line-height: 2;">
-                                5. We can <input type="text" id="b11-blank5" style="width: 200px;"> problems.
-                            </p>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-check" onclick="checkB11FillBlanks()">Check Answers!</button>
-                    <div id="b11-fillblank-feedback" class="feedback"></div>
-                </div>
-
-                <div class="quiz-box">
-                    <h3>📝 Quiz Time!</h3>
-                    <div id="b11-quiz"></div>
-                    <button class="btn btn-check" onclick="checkQuiz('b11')" style="margin-top: 1.5rem;">Submit Quiz</button>
-                    <div id="b11-quiz-score" class="score-display" style="display: none;"></div>
-                </div>
-
-                <div style="text-align: center;">
-                    <button class="back-button bottom-back-button" onclick="showPage('home', event)">
-                        ← Back to Lessons
-                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- B1.2 PAGE -->
-        <div id="b12" class="page">
-            <div class="card" style="border-color: var(--lime);">
-                <h2>B1.2 - Human Impacts on Animals 🏡</h2>
-                <p><strong>People affect animals and their homes</strong>! We need to be careful and help protect them!</p>
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Sort Human Actions!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each action to show if it <strong>HELPS</strong> or <strong>HURTS</strong> animals and their habitats!
+                </p>
                 
-                <div class="audio-controls">
-                    <button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b12">🔊 Read This Page Aloud</button>
-                    <button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b12" style="display: none;">⏸️ Stop Reading</button>
-                    <p style="margin-top: 1rem; font-size: 1.1rem; color: var(--purple); font-weight: 600;">💡 Click on any text or card to hear it read aloud!</p>
-                </div>
-
-                <h3>How We Impact Animals 🏗️</h3>
-                <div class="example-grid">
-                    <div class="example-card" style="border-color: var(--pink);">
-                        <div class="icon">🏘️</div>
-                        <h4>Building Homes</h4>
-                        <p>Takes animal habitats!</p>
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b11-drag-items">
+                        <h4>Actions to Sort:</h4>
+                        <div class="drag-item" draggable="true" data-category="helps">🌳 Planting trees in a park</div>
+                        <div class="drag-item" draggable="true" data-category="hurts">🏭 Factory dumping waste in river</div>
+                        <div class="drag-item" draggable="true" data-category="helps">🗑️ Picking up litter from the beach</div>
+                        <div class="drag-item" draggable="true" data-category="hurts">🔥 Cutting down a forest for farmland</div>
+                        <div class="drag-item" draggable="true" data-category="helps">🏡 Building birdhouses in your yard</div>
+                        <div class="drag-item" draggable="true" data-category="hurts">🎣 Catching too many fish from a lake</div>
+                        <div class="drag-item" draggable="true" data-category="helps">♻️ Recycling plastic bottles</div>
+                        <div class="drag-item" draggable="true" data-category="hurts">💡 Leaving bright lights on at night near the beach</div>
                     </div>
-                    <div class="example-card" style="border-color: var(--orange);">
-                        <div class="icon">🚗</div>
-                        <h4>Pollution</h4>
-                        <p>Makes air & water dirty!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--purple);">
-                        <div class="icon">🗑️</div>
-                        <h4>Litter</h4>
-                        <p>Harms animals!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--blue);">
-                        <div class="icon">🌳</div>
-                        <h4>Cutting Trees</h4>
-                        <p>Destroys homes!</p>
-                    </div>
-                </div>
-
-                <h3>How We Can Help 💚</h3>
-                <div class="example-grid">
-                    <div class="example-card" style="border-color: var(--green);">
-                        <div class="icon">🌲</div>
-                        <h4>Plant Trees</h4>
-                        <p>Make new homes!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--lime);">
-                        <div class="icon">♻️</div>
-                        <h4>Recycle</h4>
-                        <p>Less garbage!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--yellow);">
-                        <div class="icon">🏞️</div>
-                        <h4>Protect Habitats</h4>
-                        <p>Save wild spaces!</p>
-                    </div>
-                    <div class="example-card" style="border-color: var(--orange);">
-                        <div class="icon">🚶</div>
-                        <h4>Walk or Bike</h4>
-                        <p>Less pollution!</p>
-                    </div>
-                </div>
-
-                <div class="activity-box">
-                    <h3>🎯 Activity 1: Drag & Drop!</h3>
                     
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; margin: 2rem 0;" id="b12-drag-items">
-                        <div class="drag-item" draggable="true" data-category="harmful">🏘️ Building cities</div>
-                        <div class="drag-item" draggable="true" data-category="harmful">🚗 Car pollution</div>
-                        <div class="drag-item" draggable="true" data-category="harmful">🗑️ Littering</div>
-                        <div class="drag-item" draggable="true" data-category="harmful">🌳 Cutting forests</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🌲 Planting trees</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">♻️ Recycling</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🏞️ Protected parks</div>
-                        <div class="drag-item" draggable="true" data-category="helpful">🚶 Walking</div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-                        <div>
-                            <h4 style="text-align: center; color: var(--green); font-size: 1.5rem;">HARMFUL</h4>
-                            <div class="drop-zone" data-category="harmful"></div>
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="helps">
+                            <h4>✅ HELPS Animals</h4>
                         </div>
-                        <div>
-                            <h4 style="text-align: center; color: var(--green); font-size: 1.5rem;">HELPFUL</h4>
-                            <div class="drop-zone" data-category="helpful"></div>
+                        <div class="drop-zone" data-category="hurts">
+                            <h4>❌ HURTS Animals</h4>
                         </div>
                     </div>
-
-                    <div class="button-group">
-                        <button class="btn btn-check" onclick="checkB12DragDrop()">Check Sorting!</button>
-                        <button class="btn btn-reset" onclick="resetB12DragDrop()">Reset</button>
-                    </div>
-                    <div id="b12-drag-feedback" class="feedback"></div>
                 </div>
-
-                <div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); border-color: var(--blue);">
-                    <h3>🎯 Activity 2: Fill in the Blanks!</h3>
-                    
-                    <div style="display: grid; gap: 2rem; margin: 2rem 0;">
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--lime);"><p style="font-weight: 700; font-size: 1.2rem;">1. Building takes animal <input type="text" id="b12-blank1" style="width: 200px;">.</p></div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--lime);"><p style="font-weight: 700; font-size: 1.2rem;">2. Pollution makes the environment <input type="text" id="b12-blank2" style="width: 200px;">.</p></div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--lime);"><p style="font-weight: 700; font-size: 1.2rem;">3. We can <input type="text" id="b12-blank3" style="width: 200px;"> to help.</p></div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--lime);"><p style="font-weight: 700; font-size: 1.2rem;">4. Protecting <input type="text" id="b12-blank4" style="width: 200px;"> helps animals.</p></div>
-                        <div style="background: white; padding: 2rem; border-radius: 15px; border: 3px solid var(--lime);"><p style="font-weight: 700; font-size: 1.2rem;">5. We should <input type="text" id="b12-blank5" style="width: 200px;"> for animals.</p></div>
-                    </div>
-
-                    <button class="btn btn-check" onclick="checkB12FillBlanks()">Check Answers!</button>
-                    <div id="b12-fillblank-feedback" class="feedback"></div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b11')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b11')">Start Over</button>
                 </div>
-
-                <div class="quiz-box">
-                    <h3>📝 Quiz Time!</h3>
-                    <div id="b12-quiz"></div>
-                    <button class="btn btn-check" onclick="checkQuiz('b12')" style="margin-top: 1.5rem;">Submit Quiz</button>
-                    <div id="b12-quiz-score" class="score-display" style="display: none;"></div>
-                </div>
-
-                <button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back to Lessons</button>
+                
+                <div id="b11-drag-feedback" class="feedback"></div>
             </div>
-        </div>
 
-        <!-- Simplified pages for B2.1-B2.5 -->
-        <div id="b21" class="page"><div class="card" style="border-color: var(--yellow);"><h2>B2.1 - Physical Characteristics 👀</h2><p>Animals have special features!</p><div class="audio-controls"><button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b21">🔊 Read</button><button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b21" style="display: none;">⏸️ Stop</button></div><div class="activity-box"><h3>🎯 Drag & Drop!</h3><div id="b21-drag-items"><div class="drag-item" draggable="true" data-category="a">🦁 Fur</div><div class="drag-item" draggable="true" data-category="b">🐟 Scales</div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"><div><div class="drop-zone" data-category="a"></div></div><div><div class="drop-zone" data-category="b"></div></div></div><button class="btn btn-check" onclick="checkB21DragDrop()">Check!</button><button class="btn btn-reset" onclick="resetB21DragDrop()">Reset</button><div id="b21-drag-feedback" class="feedback"></div></div><div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);"><h3>Fill Blanks!</h3><div style="display: grid; gap: 2rem;"><div style="background: white; padding: 2rem; border-radius: 15px;"><p>1. <input type="text" id="b21-blank1"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>2. <input type="text" id="b21-blank2"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>3. <input type="text" id="b21-blank3"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>4. <input type="text" id="b21-blank4"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>5. <input type="text" id="b21-blank5"></p></div></div><button class="btn btn-check" onclick="checkB21FillBlanks()">Check!</button><div id="b21-fillblank-feedback" class="feedback"></div></div><div class="quiz-box"><div id="b21-quiz"></div><button class="btn btn-check" onclick="checkQuiz('b21')">Submit!</button><div id="b21-quiz-score" class="score-display" style="display: none;"></div></div><button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back</button></div></div>
-        
-        <div id="b22" class="page"><div class="card" style="border-color: var(--orange);"><h2>B2.2 - Animal Locomotion 🏃</h2><p>Animals move in different ways!</p><div class="audio-controls"><button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b22">🔊 Read</button><button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b22" style="display: none;">⏸️ Stop</button></div><div class="activity-box"><h3>🎯 Drag & Drop!</h3><div id="b22-drag-items"><div class="drag-item" draggable="true" data-category="a">🐦 Fly</div><div class="drag-item" draggable="true" data-category="b">🐟 Swim</div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"><div><div class="drop-zone" data-category="a"></div></div><div><div class="drop-zone" data-category="b"></div></div></div><button class="btn btn-check" onclick="checkB22DragDrop()">Check!</button><button class="btn btn-reset" onclick="resetB22DragDrop()">Reset</button><div id="b22-drag-feedback" class="feedback"></div></div><div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);"><h3>Fill Blanks!</h3><div style="display: grid; gap: 2rem;"><div style="background: white; padding: 2rem; border-radius: 15px;"><p>1. <input type="text" id="b22-blank1"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>2. <input type="text" id="b22-blank2"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>3. <input type="text" id="b22-blank3"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>4. <input type="text" id="b22-blank4"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>5. <input type="text" id="b22-blank5"></p></div></div><button class="btn btn-check" onclick="checkB22FillBlanks()">Check!</button><div id="b22-fillblank-feedback" class="feedback"></div></div><div class="quiz-box"><div id="b22-quiz"></div><button class="btn btn-check" onclick="checkQuiz('b22')">Submit!</button><div id="b22-quiz-score" class="score-display" style="display: none;"></div></div><button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back</button></div></div>
-        
-        <div id="b23" class="page"><div class="card" style="border-color: var(--pink);"><h2>B2.3 - Life Cycles 🔄</h2><p>Animals grow from egg to adult!</p><div class="audio-controls"><button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b23">🔊 Read</button><button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b23" style="display: none;">⏸️ Stop</button></div><div class="activity-box"><h3>🎯 Drag & Drop!</h3><div id="b23-drag-items"><div class="drag-item" draggable="true" data-category="a">🦋 Butterfly</div><div class="drag-item" draggable="true" data-category="b">🐸 Frog</div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"><div><div class="drop-zone" data-category="a"></div></div><div><div class="drop-zone" data-category="b"></div></div></div><button class="btn btn-check" onclick="checkB23DragDrop()">Check!</button><button class="btn btn-reset" onclick="resetB23DragDrop()">Reset</button><div id="b23-drag-feedback" class="feedback"></div></div><div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);"><h3>Fill Blanks!</h3><div style="display: grid; gap: 2rem;"><div style="background: white; padding: 2rem; border-radius: 15px;"><p>1. <input type="text" id="b23-blank1"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>2. <input type="text" id="b23-blank2"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>3. <input type="text" id="b23-blank3"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>4. <input type="text" id="b23-blank4"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>5. <input type="text" id="b23-blank5"></p></div></div><button class="btn btn-check" onclick="checkB23FillBlanks()">Check!</button><div id="b23-fillblank-feedback" class="feedback"></div></div><div class="quiz-box"><div id="b23-quiz"></div><button class="btn btn-check" onclick="checkQuiz('b23')">Submit!</button><div id="b23-quiz-score" class="score-display" style="display: none;"></div></div><button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back</button></div></div>
-        
-        <div id="b24" class="page"><div class="card" style="border-color: var(--purple);"><h2>B2.4 - Changes in Life Cycles 🦋</h2><p>Animals change as they grow!</p><div class="audio-controls"><button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b24">🔊 Read</button><button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b24" style="display: none;">⏸️ Stop</button></div><div class="activity-box"><h3>🎯 Drag & Drop!</h3><div id="b24-drag-items"><div class="drag-item" draggable="true" data-category="a">🐛 Caterpillar</div><div class="drag-item" draggable="true" data-category="b">🦋 Butterfly</div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"><div><div class="drop-zone" data-category="a"></div></div><div><div class="drop-zone" data-category="b"></div></div></div><button class="btn btn-check" onclick="checkB24DragDrop()">Check!</button><button class="btn btn-reset" onclick="resetB24DragDrop()">Reset</button><div id="b24-drag-feedback" class="feedback"></div></div><div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);"><h3>Fill Blanks!</h3><div style="display: grid; gap: 2rem;"><div style="background: white; padding: 2rem; border-radius: 15px;"><p>1. <input type="text" id="b24-blank1"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>2. <input type="text" id="b24-blank2"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>3. <input type="text" id="b24-blank3"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>4. <input type="text" id="b24-blank4"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>5. <input type="text" id="b24-blank5"></p></div></div><button class="btn btn-check" onclick="checkB24FillBlanks()">Check!</button><div id="b24-fillblank-feedback" class="feedback"></div></div><div class="quiz-box"><div id="b24-quiz"></div><button class="btn btn-check" onclick="checkQuiz('b24')">Submit!</button><div id="b24-quiz-score" class="score-display" style="display: none;"></div></div><button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back</button></div></div>
-        
-        <div id="b25" class="page"><div class="card" style="border-color: var(--blue);"><h2>B2.5 - Adaptations 🦎</h2><p>Animals have special survival skills!</p><div class="audio-controls"><button class="btn btn-audio" onclick="readPageAloud()" id="readBtn-b25">🔊 Read</button><button class="btn btn-reset" onclick="stopReading()" id="stopBtn-b25" style="display: none;">⏸️ Stop</button></div><div class="activity-box"><h3>🎯 Drag & Drop!</h3><div id="b25-drag-items"><div class="drag-item" draggable="true" data-category="a">🐪 Camels</div><div class="drag-item" draggable="true" data-category="b">🐧 Penguins</div></div><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;"><div><div class="drop-zone" data-category="a"></div></div><div><div class="drop-zone" data-category="b"></div></div></div><button class="btn btn-check" onclick="checkB25DragDrop()">Check!</button><button class="btn btn-reset" onclick="resetB25DragDrop()">Reset</button><div id="b25-drag-feedback" class="feedback"></div></div><div class="activity-box" style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);"><h3>Fill Blanks!</h3><div style="display: grid; gap: 2rem;"><div style="background: white; padding: 2rem; border-radius: 15px;"><p>1. <input type="text" id="b25-blank1"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>2. <input type="text" id="b25-blank2"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>3. <input type="text" id="b25-blank3"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>4. <input type="text" id="b25-blank4"></p></div><div style="background: white; padding: 2rem; border-radius: 15px;"><p>5. <input type="text" id="b25-blank5"></p></div></div><button class="btn btn-check" onclick="checkB25FillBlanks()">Check!</button><div id="b25-fillblank-feedback" class="feedback"></div></div><div class="quiz-box"><div id="b25-quiz"></div><button class="btn btn-check" onclick="checkQuiz('b25')">Submit!</button><div id="b25-quiz-score" class="score-display" style="display: none;"></div></div><button class="back-button bottom-back-button" onclick="showPage('home', event)">← Back</button></div></div>
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. What is a habitat?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">A place where only people live</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">A place where an animal lives and finds food, water, and shelter</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">A type of food that animals eat</span>
+                        </div>
+                    </div>
+                    <div id="b11-q0-feedback" class="feedback"></div>
+                </div>
 
-    </div>
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. When we build new roads and houses, what might happen to the animals that lived there?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They will be happy to have neighbors</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They might need to find a new place to live</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Nothing will change for them</span>
+                        </div>
+                    </div>
+                    <div id="b11-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. Why is plastic litter dangerous for sea turtles?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They like to play with it</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They might think plastic bags are jellyfish and eat them, which can hurt them</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">It helps them swim faster</span>
+                        </div>
+                    </div>
+                    <div id="b11-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. Which of these actions HELPS animals and their habitats?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Throwing trash in the park</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Planting trees and flowers in your community</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Using lots of plastic bags every day</span>
+                        </div>
+                    </div>
+                    <div id="b11-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. What happens to polar bears when ice melts because of climate change?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They learn to swim better</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">It becomes harder for them to find food and survive</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They move to warm forests</span>
+                        </div>
+                    </div>
+                    <div id="b11-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b11')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b11-quiz-score"></div>
+            </div>
+
+            <button class="back-button bottom-back-button show" onclick="showHome()">
+                ⬅ Back to Units
+            </button>
+        </section>
+    </main>
 
     <script>
-        // Quiz data - 5 questions per unit
-        const quizData = {
-            b11: [
-                { question: "How do bees help?", options: ["Hurt flowers", "Pollinate flowers", "Eat flowers", "Break flowers"], correct: 1 },
-                { question: "What helps soil?", options: ["Rocks", "Worms", "Cars", "Buildings"], correct: 1 },
-                { question: "Should we secure garbage?", options: ["No", "Yes", "Maybe", "Never"], correct: 1 },
-                { question: "Can animals help us?", options: ["No", "Yes", "Never", "Sometimes only"], correct: 1 },
-                { question: "Should we manage problems?", options: ["No", "Yes", "Ignore them", "Make more"], correct: 1 }
-            ],
-            b12: [
-                { question: "Does building affect animals?", options: ["No", "Yes", "Never", "Not at all"], correct: 1 },
-                { question: "What does pollution do?", options: ["Helps", "Harms environment", "Nothing", "Cleans"], correct: 1 },
-                { question: "How can we help?", options: ["Litter more", "Plant trees", "Pollute", "Build more"], correct: 1 },
-                { question: "Should we protect habitats?", options: ["No", "Yes", "Maybe", "Never"], correct: 1 },
-                { question: "Walking instead of driving:", options: ["Hurts more", "Helps reduce pollution", "Doesn't matter", "Is worse"], correct: 1 }
-            ],
-            b21: [
-                { question: "Do animals have different features?", options: ["No", "Yes", "All same", "Never"], correct: 1 },
-                { question: "What covers birds?", options: ["Fur", "Feathers", "Scales", "Skin only"], correct: 1 },
-                { question: "Fish have:", options: ["Fur", "Scales", "Feathers", "Nothing"], correct: 1 },
-                { question: "Characteristics are:", options: ["Nothing", "Features", "Food", "Homes"], correct: 1 },
-                { question: "Do characteristics change?", options: ["Never", "Some do", "All stay same", "None"], correct: 1 }
-            ],
-            b22: [
-                { question: "Locomotion means:", options: ["Eating", "Moving", "Sleeping", "Breathing"], correct: 1 },
-                { question: "Birds can:", options: ["Only walk", "Fly", "Only swim", "Nothing"], correct: 1 },
-                { question: "Fish move by:", options: ["Walking", "Swimming", "Flying", "Jumping"], correct: 1 },
-                { question: "Snakes:", options: ["Fly", "Slither", "Have legs", "Swim only"], correct: 1 },
-                { question: "Animals move:", options: ["All same way", "Different ways", "Never", "Only one way"], correct: 1 }
-            ],
-            b23: [
-                { question: "Life cycle is:", options: ["One day", "Egg to adult", "Just birth", "Never changes"], correct: 1 },
-                { question: "Butterfly starts as:", options: ["Adult", "Egg", "Bird", "Fish"], correct: 1 },
-                { question: "Frog babies are:", options: ["Birds", "Tadpoles", "Puppies", "Kittens"], correct: 1 },
-                { question: "Birds hatch from:", options: ["Water", "Eggs", "Ground", "Trees"], correct: 1 },
-                { question: "All animals:", options: ["Stay same", "Grow and change", "Never change", "Live forever"], correct: 1 }
-            ],
-            b24: [
-                { question: "Do animals change as they grow?", options: ["No", "Yes", "Never", "Stay same"], correct: 1 },
-                { question: "Caterpillar becomes:", options: ["Frog", "Butterfly", "Bird", "Fish"], correct: 1 },
-                { question: "Tadpole becomes:", options: ["Butterfly", "Frog", "Bird", "Snake"], correct: 1 },
-                { question: "Baby birds:", options: ["Never change", "Grow feathers", "Stay small", "Don't grow"], correct: 1 },
-                { question: "Appearance means:", options: ["Sound", "How it looks", "Smell", "Taste"], correct: 1 }
-            ],
-            b25: [
-                { question: "Adaptations help animals:", options: ["Die", "Survive", "Get sick", "Disappear"], correct: 1 },
-                { question: "Polar bears have:", options: ["No fur", "Thick fur", "Feathers", "Scales"], correct: 1 },
-                { question: "Camels store:", options: ["Nothing", "Water", "Ice", "Snow"], correct: 1 },
-                { question: "Birds have wings to:", options: ["Walk", "Fly", "Swim", "Dig"], correct: 1 },
-                { question: "Adaptations can be:", options: ["Only physical", "Physical or behavioral", "Nothing", "Only color"], correct: 1 }
-            ]
-        };
-
-        // Text-to-Speech
-        let speechSynthesis = window.speechSynthesis;
-        let currentUtterance = null;
-
-        function readPageAloud() {
-            if (speechSynthesis.speaking) speechSynthesis.cancel();
+        // Navigation
+        function showUnit(unitId) {
+            document.querySelectorAll('.unit').forEach(unit => unit.classList.remove('active'));
+            document.getElementById(unitId).classList.add('active');
             
-            const activePage = document.querySelector('.page.active');
-            if (!activePage || activePage.id === 'home') {
-                alert('Please go to a lesson page first!');
-                return;
-            }
-            
-            const card = activePage.querySelector('.card');
-            if (!card) return;
-            
-            let textToRead = '';
-            const title = card.querySelector('h2');
-            if (title) textToRead += title.textContent + '. ';
-            
-            const paragraphs = card.querySelectorAll('p');
-            paragraphs.forEach(p => {
-                if (!p.closest('.activity-box') && !p.closest('.quiz-box') && 
-                    !p.closest('.feedback') && !p.closest('.audio-controls')) {
-                    textToRead += p.textContent + '. ';
-                }
-            });
-            
-            const headings = card.querySelectorAll('h3');
-            headings.forEach(h => {
-                if (!h.closest('.activity-box') && !h.closest('.quiz-box')) {
-                    textToRead += h.textContent + '. ';
-                }
-            });
-            
-            const exampleCards = card.querySelectorAll('.example-card');
-            exampleCards.forEach(ec => {
-                const h4 = ec.querySelector('h4');
-                const p = ec.querySelector('p');
-                if (h4) textToRead += h4.textContent + '. ';
-                if (p) textToRead += p.textContent + '. ';
-            });
-            
-            textToRead = textToRead.replace(/\s+/g, ' ').replace(/\.\./g, '.').trim();
-            
-            if (!textToRead) {
-                alert('No content to read!');
-                return;
-            }
-            
-            currentUtterance = new SpeechSynthesisUtterance(textToRead);
-            currentUtterance.rate = 0.85;
-            currentUtterance.pitch = 1.2;
-            currentUtterance.volume = 1.0;
-            
-            const readBtn = document.getElementById(`readBtn-${activePage.id}`);
-            const stopBtn = document.getElementById(`stopBtn-${activePage.id}`);
-            
-            if (readBtn) readBtn.style.display = 'none';
-            if (stopBtn) stopBtn.style.display = 'inline-block';
-            
-            currentUtterance.onend = function() {
-                if (readBtn) readBtn.style.display = 'inline-block';
-                if (stopBtn) stopBtn.style.display = 'none';
-            };
-            
-            currentUtterance.onerror = function() {
-                if (readBtn) readBtn.style.display = 'inline-block';
-                if (stopBtn) stopBtn.style.display = 'none';
-            };
-            
-            speechSynthesis.speak(currentUtterance);
-        }
-
-        function stopReading() {
-            if (speechSynthesis.speaking) speechSynthesis.cancel();
-            document.querySelectorAll('[id^="readBtn-"]').forEach(btn => btn.style.display = 'inline-block');
-            document.querySelectorAll('[id^="stopBtn-"]').forEach(btn => btn.style.display = 'none');
-            // Remove speaking class from all elements
-            document.querySelectorAll('.speaking').forEach(el => el.classList.remove('speaking'));
-        }
-
-        // Click-to-Read Audio Functionality
-        function readElementAloud(element) {
-            // Stop any current speech
-            if (speechSynthesis.speaking) {
-                speechSynthesis.cancel();
-                document.querySelectorAll('.speaking').forEach(el => el.classList.remove('speaking'));
-            }
-            
-            // Get text to read
-            let textToRead = element.textContent.trim();
-            
-            if (!textToRead) return;
-            
-            // Create utterance
-            const utterance = new SpeechSynthesisUtterance(textToRead);
-            utterance.rate = 0.85;
-            utterance.pitch = 1.2;
-            utterance.volume = 1.0;
-            
-            // Add speaking class
-            element.classList.add('speaking');
-            
-            // Remove speaking class when done
-            utterance.onend = () => {
-                element.classList.remove('speaking');
-            };
-            
-            utterance.onerror = () => {
-                element.classList.remove('speaking');
-            };
-            
-            // Speak
-            speechSynthesis.speak(utterance);
-        }
-
-        // Initialize click-to-read on page load and page changes
-        function initializeClickToRead() {
-            const activePage = document.querySelector('.page.active');
-            if (!activePage || activePage.id === 'home') return;
-            
-            const card = activePage.querySelector('.card');
-            if (!card) return;
-            
-            // Remove old listeners
-            card.querySelectorAll('.clickable-audio').forEach(el => {
-                el.classList.remove('clickable-audio');
-            });
-            
-            // Add clickable class and listeners to content elements
-            // H2 titles
-            const h2 = card.querySelector('h2');
-            if (h2 && !h2.closest('.activity-box') && !h2.closest('.quiz-box')) {
-                h2.classList.add('clickable-audio');
-                h2.onclick = () => readElementAloud(h2);
-            }
-            
-            // H3 headings (not in activities/quizzes)
-            card.querySelectorAll('h3').forEach(h3 => {
-                if (!h3.closest('.activity-box') && !h3.closest('.quiz-box') && !h3.closest('.audio-controls')) {
-                    h3.classList.add('clickable-audio');
-                    h3.onclick = () => readElementAloud(h3);
-                }
-            });
-            
-            // Paragraphs (not in activities/quizzes)
-            card.querySelectorAll('p').forEach(p => {
-                if (!p.closest('.activity-box') && !p.closest('.quiz-box') && 
-                    !p.closest('.feedback') && !p.closest('.audio-controls') &&
-                    !p.closest('.score-display')) {
-                    p.classList.add('clickable-audio');
-                    p.onclick = () => readElementAloud(p);
-                }
-            });
-            
-            // Example cards
-            card.querySelectorAll('.example-card').forEach(ec => {
-                ec.classList.add('clickable-audio');
-                ec.onclick = () => readElementAloud(ec);
-            });
-        }
-
-        // Page Navigation
-        function showPage(pageId, event) {
-            stopReading();
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            if (event && event.target) event.target.classList.add('active');
+            event.target.classList.add('active');
             
-            const nav = document.querySelector('nav');
-            const backButton = document.getElementById('backButton');
-            const bottomBackButtons = document.querySelectorAll('.bottom-back-button');
-            
-            if (pageId === 'home') {
-                nav.classList.remove('hidden');
-                backButton.classList.remove('show');
-                bottomBackButtons.forEach(btn => btn.classList.remove('show'));
-            } else {
-                nav.classList.add('hidden');
-                backButton.classList.add('show');
-                bottomBackButtons.forEach(btn => btn.classList.add('show'));
-            }
-            
-            if (pageId !== 'home' && quizData[pageId] && !document.getElementById(`${pageId}-quiz`).innerHTML) {
-                loadQuiz(pageId);
-            }
-            
-            // Initialize click-to-read audio for this page
-            setTimeout(initializeClickToRead, 100);
+            document.getElementById('main-nav').classList.add('hidden');
+            document.querySelector('.back-button').classList.add('show');
             
             window.scrollTo(0, 0);
         }
 
-        function loadQuiz(section) {
-            const quizContainer = document.getElementById(`${section}-quiz`);
-            if (!quizContainer || !quizData[section]) return;
-            
-            const questions = quizData[section];
-            let html = '';
-            
-            questions.forEach((q, index) => {
-                html += `
-                    <div class="question" data-question="${index}">
-                        <h4>Question ${index + 1}: ${q.question}</h4>
-                        <div class="options">
-                            ${q.options.map((opt, optIndex) => `
-                                <div class="option" onclick="selectQuizOption(this, '${section}', ${index}, ${optIndex})">
-                                    ${opt}
-                                </div>
-                            `).join('')}
-                        </div>
-                        <div class="feedback" id="${section}-q${index}-feedback"></div>
-                    </div>
-                `;
-            });
-            
-            quizContainer.innerHTML = html;
+        function showHome() {
+            document.getElementById('main-nav').classList.remove('hidden');
+            document.querySelector('.back-button').classList.remove('show');
+            window.scrollTo(0, 0);
         }
 
-        function selectQuizOption(element, section, questionIndex, optionIndex) {
+        // Click-to-Read Audio
+        let currentUtterance = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.clickable-audio').forEach(element => {
+                element.addEventListener('click', function() {
+                    if (currentUtterance) {
+                        window.speechSynthesis.cancel();
+                        document.querySelectorAll('.speaking').forEach(el => el.classList.remove('speaking'));
+                    }
+                    
+                    const text = this.textContent;
+                    currentUtterance = new SpeechSynthesisUtterance(text);
+                    currentUtterance.rate = 0.85;
+                    currentUtterance.pitch = 1.15;
+                    
+                    this.classList.add('speaking');
+                    
+                    currentUtterance.onend = () => {
+                        this.classList.remove('speaking');
+                        currentUtterance = null;
+                    };
+                    
+                    window.speechSynthesis.speak(currentUtterance);
+                });
+            });
+        });
+
+        // Quiz Data
+        const quizData = {
+            b11: [
+                { correct: 1 }, // habitat definition
+                { correct: 1 }, // building impacts
+                { correct: 1 }, // plastic and turtles
+                { correct: 1 }, // planting trees helps
+                { correct: 1 }  // polar bears and ice
+            ]
+        };
+
+        function selectOption(element, optionIndex) {
             const question = element.closest('.question');
-            question.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            question.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+                delete opt.dataset.selected;
+            });
             element.classList.add('selected');
             element.dataset.selected = optionIndex;
         }
@@ -983,7 +1084,7 @@
             let correct = 0;
             
             questions.forEach((q, index) => {
-                const question = document.querySelector(`#${section}-quiz .question[data-question="${index}"]`);
+                const question = document.querySelector(`#${section} .question[data-question="${index}"]`);
                 const selected = question.querySelector('.option.selected');
                 const feedback = document.getElementById(`${section}-q${index}-feedback`);
                 
@@ -994,13 +1095,13 @@
                     if (selectedIndex === q.correct) {
                         selected.classList.add('correct');
                         feedback.className = 'feedback correct show';
-                        feedback.textContent = '✓ Correct!';
+                        feedback.textContent = '✓ Amazing! You got it right!';
                         correct++;
                     } else {
                         selected.classList.add('incorrect');
                         question.querySelectorAll('.option')[q.correct].classList.add('correct');
                         feedback.className = 'feedback incorrect show';
-                        feedback.textContent = '✗ Not quite. Correct answer in green.';
+                        feedback.textContent = '✗ Not quite. The correct answer is in green.';
                     }
                 }
             });
@@ -1008,10 +1109,15 @@
             const scoreDisplay = document.getElementById(`${section}-quiz-score`);
             scoreDisplay.style.display = 'block';
             scoreDisplay.innerHTML = `
-                <h3>Score: ${correct}/${questions.length}</h3>
-                <p>${correct === questions.length ? '🎉 Perfect!' : 
-                     correct >= 4 ? '⭐ Great job!' : '😊 Good try!'}</p>
+                <h3>Your Score: ${correct}/${questions.length}</h3>
+                <p>${correct === questions.length ? '🎉 Perfect! You\'re an animal expert!' : 
+                     correct >= 4 ? '⭐ Fantastic job! You know a lot!' : 
+                     correct >= 3 ? '😊 Good work! Keep learning!' :
+                     '🌟 Nice try! Read the lesson again and try once more!'}</p>
             `;
+            
+            // Scroll to score
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         // Drag and Drop
@@ -1021,22 +1127,35 @@
 
         function setupDragAndDrop() {
             document.querySelectorAll('.drag-item').forEach(item => {
-                item.addEventListener('dragstart', e => { draggedElement = item; item.style.opacity = '0.5'; });
-                item.addEventListener('dragend', e => { item.style.opacity = '1'; });
+                item.addEventListener('dragstart', e => { 
+                    draggedElement = item; 
+                    item.style.opacity = '0.5'; 
+                });
+                item.addEventListener('dragend', e => { 
+                    item.style.opacity = '1'; 
+                });
             });
             
             document.querySelectorAll('.drop-zone').forEach(zone => {
-                zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
-                zone.addEventListener('dragleave', e => { zone.classList.remove('drag-over'); });
+                zone.addEventListener('dragover', e => { 
+                    e.preventDefault(); 
+                    zone.classList.add('drag-over'); 
+                });
+                zone.addEventListener('dragleave', e => { 
+                    zone.classList.remove('drag-over'); 
+                });
                 zone.addEventListener('drop', e => {
                     e.preventDefault();
                     zone.classList.remove('drag-over');
-                    if (draggedElement) { zone.appendChild(draggedElement); draggedElement = null; }
+                    if (draggedElement) { 
+                        zone.appendChild(draggedElement); 
+                        draggedElement = null; 
+                    }
                 });
             });
         }
 
-        function checkGenericDragDrop(unitId) {
+        function checkDragDrop(unitId) {
             const dropZones = document.querySelectorAll(`#${unitId} .drop-zone`);
             let correct = 0, total = 0;
             
@@ -1046,9 +1165,11 @@
                     total++;
                     if (item.dataset.category === category) {
                         correct++;
-                        item.style.borderColor = '#6BCF7F';
+                        item.style.borderColor = '#84CC16';
+                        item.style.background = 'linear-gradient(135deg, #D9F99D, #A3E635)';
                     } else {
-                        item.style.borderColor = '#FF6B9D';
+                        item.style.borderColor = '#DC2626';
+                        item.style.background = 'linear-gradient(135deg, #FCA5A5, #F87171)';
                     }
                 });
             });
@@ -1056,80 +1177,22 @@
             const feedback = document.getElementById(`${unitId}-drag-feedback`);
             feedback.className = 'feedback show ' + (correct === total && total > 0 ? 'correct' : 'incorrect');
             feedback.textContent = correct === total && total > 0 ? 
-                `🐾 Perfect! All ${total} correct!` :
-                `You got ${correct}/${total}. Green=right, pink=wrong!`;
+                `🎉 Perfect! All ${total} sorted correctly!` :
+                `You got ${correct}/${total} right! Green edges = correct, red edges = try again!`;
         }
 
-        function resetGenericDragDrop(unitId) {
+        function resetDragDrop(unitId) {
             const container = document.getElementById(`${unitId}-drag-items`);
-            document.querySelectorAll(`#${unitId}-drag-items .drag-item`).forEach(item => {
-                item.style.borderColor = 'var(--green)';
+            const dragItems = document.querySelectorAll(`#${unitId} .drag-item`);
+            
+            dragItems.forEach(item => {
+                item.style.borderColor = '#FEF3C7';
+                item.style.background = 'linear-gradient(135deg, #FACC15, #FB923C)';
                 container.appendChild(item);
             });
+            
             document.getElementById(`${unitId}-drag-feedback`).className = 'feedback';
         }
-
-        // Drag-drop functions
-        function checkB11DragDrop() { checkGenericDragDrop('b11'); }
-        function resetB11DragDrop() { resetGenericDragDrop('b11'); }
-        function checkB12DragDrop() { checkGenericDragDrop('b12'); }
-        function resetB12DragDrop() { resetGenericDragDrop('b12'); }
-        function checkB21DragDrop() { checkGenericDragDrop('b21'); }
-        function resetB21DragDrop() { resetGenericDragDrop('b21'); }
-        function checkB22DragDrop() { checkGenericDragDrop('b22'); }
-        function resetB22DragDrop() { resetGenericDragDrop('b22'); }
-        function checkB23DragDrop() { checkGenericDragDrop('b23'); }
-        function resetB23DragDrop() { resetGenericDragDrop('b23'); }
-        function checkB24DragDrop() { checkGenericDragDrop('b24'); }
-        function resetB24DragDrop() { resetGenericDragDrop('b24'); }
-        function checkB25DragDrop() { checkGenericDragDrop('b25'); }
-        function resetB25DragDrop() { resetGenericDragDrop('b25'); }
-
-        // Fill-in-Blank functions
-        const blankAnswers = {};
-        ['b11','b12','b21','b22','b23','b24','b25'].forEach(unit => {
-            blankAnswers[unit] = {};
-            for(let i=1; i<=5; i++) {
-                blankAnswers[unit][`${unit}-blank${i}`] = [
-                    'pollinate','help','protect','garbage','environment','minimize','manage','solve','fix','habitats','homes','dirty','recycle','plant','care','characteristics','features','fur','feathers','scales','wings','legs','locomotion','move','movement','fly','swim','walk','run','slither','life','cycle','egg','eggs','adult','baby','tadpole','caterpillar','butterfly','frog','grow','change','changes','appearance','behavior','adaptations','adapt','survive','survival','thick','camouflage','blend'
-                ];
-            }
-        });
-
-        function checkGenericFillBlanks(unitId) {
-            let correct = 0;
-            const total = 5;
-            const answers = blankAnswers[unitId];
-            
-            Object.keys(answers).forEach(blankId => {
-                const input = document.getElementById(blankId);
-                const userAnswer = input.value.trim().toLowerCase();
-                
-                if (answers[blankId].some(ans => ans.toLowerCase() === userAnswer)) {
-                    input.style.borderColor = '#6BCF7F';
-                    input.style.backgroundColor = '#D1FAE5';
-                    correct++;
-                } else {
-                    input.style.borderColor = '#FF6B9D';
-                    input.style.backgroundColor = '#FEE2E2';
-                }
-            });
-            
-            const feedback = document.getElementById(`${unitId}-fillblank-feedback`);
-            feedback.className = correct === total ? 'feedback correct show' : 'feedback incorrect show';
-            feedback.textContent = correct === total ? 
-                `🐾 Perfect! All ${total} correct!` :
-                `You got ${correct}/${total}. Green=right, pink=wrong!`;
-        }
-
-        // Fill-blank functions
-        function checkB11FillBlanks() { checkGenericFillBlanks('b11'); }
-        function checkB12FillBlanks() { checkGenericFillBlanks('b12'); }
-        function checkB21FillBlanks() { checkGenericFillBlanks('b21'); }
-        function checkB22FillBlanks() { checkGenericFillBlanks('b22'); }
-        function checkB23FillBlanks() { checkGenericFillBlanks('b23'); }
-        function checkB24FillBlanks() { checkGenericFillBlanks('b24'); }
-        function checkB25FillBlanks() { checkGenericFillBlanks('b25'); }
     </script>
 </body>
 </html>
