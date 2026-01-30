@@ -283,6 +283,11 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 3rem 2rem;
+            display: none;
+        }
+        
+        main.show {
+            display: block;
         }
         
         .unit {
@@ -748,37 +753,37 @@
         <p class="subtitle">Grade 2 Science Adventure</p>
     </header>
 
-    <button class="back-button" onclick="showHome()">⬅ Back to Units</button>
-
     <nav id="main-nav">
         <div class="nav-grid">
-            <button class="nav-btn active" onclick="showUnit('b11')">
+            <button class="nav-btn" onclick="showUnit('b11')">
                 B1.1: Humans & Animals
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b12')">
                 B1.2: Animal Adaptations
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b21')">
                 B2.1: Animal Bodies
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b22')">
                 B2.2: Body Adaptations
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b23')">
                 B2.3: Life Cycles
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b24')">
                 B2.4: Surviving Changes
             </button>
-            <button class="nav-btn" disabled>
+            <button class="nav-btn" onclick="showUnit('b25')">
                 B2.5: Helping Animals
             </button>
         </div>
     </nav>
 
+    <button class="back-button" onclick="showHome()">⬅ Back to Units</button>
+
     <main>
         <!-- Unit B1.1: Humans & Animals -->
-        <section id="b11" class="unit active">
+        <section id="b11" class="unit">
             <div class="content-card">
                 <h2>🏭 How Humans Affect Animals</h2>
                 
@@ -1000,10 +1005,1538 @@
                 
                 <div id="b11-quiz-score"></div>
             </div>
+        </section>
 
-            <button class="back-button bottom-back-button show" onclick="showHome()">
-                ⬅ Back to Units
-            </button>
+        <!-- Unit B1.2: Animal Adaptations -->
+        <section id="b12" class="unit">
+            <div class="content-card">
+                <h2>🦎 How Animals Adapt to Changes</h2>
+                
+                <p class="clickable-audio">
+                    Animals are amazing! They can change and adjust to new situations in their environment. 
+                    This ability to change and survive is called <strong>adaptation</strong>.
+                </p>
+                
+                <p class="clickable-audio">
+                    When something changes in an animal's habitat - like the weather getting colder, food becoming 
+                    harder to find, or people building nearby - animals have special ways to survive these changes!
+                </p>
+
+                <h3>🌡️ What Kinds of Changes Happen?</h3>
+                <p class="clickable-audio">
+                    Animal habitats can change in many different ways. Some changes happen quickly, and some happen slowly over time.
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">🔄 Types of Environmental Changes:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🌞 Seasonal Changes:</strong> In fall and winter, it gets cold and food is harder to find. In spring and summer, it's warm and there's lots of food.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>☁️ Weather Changes:</strong> Sometimes there's lots of rain and flooding. Other times there's not enough rain and everything gets dry.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🏗️ Habitat Changes:</strong> When forests are cut down or ponds dry up, animals lose their homes and need to adapt.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🍂 Food Availability:</strong> Sometimes there are lots of plants and insects to eat. Other times, food becomes scarce.
+                    </p>
+                </div>
+
+                <h3>🐻 How Do Animals Adapt?</h3>
+                <p class="clickable-audio">
+                    Animals have developed clever ways to survive when their environment changes. Let's look at some amazing examples!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🐻</div>
+                        <p class="clickable-audio"><strong>Bears Hibernate:</strong> When winter comes and food is scarce, bears sleep through the cold months. They eat lots of food in fall to get fat, then sleep in dens until spring!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦆</div>
+                        <p class="clickable-audio"><strong>Birds Migrate:</strong> Many birds fly south to warmer places when winter comes. They travel thousands of miles to find food and warmth, then come back in spring!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐿️</div>
+                        <p class="clickable-audio"><strong>Squirrels Store Food:</strong> Squirrels collect and hide nuts in fall. They bury them underground and remember where they are so they have food in winter!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦊</div>
+                        <p class="clickable-audio"><strong>Foxes Grow Thick Fur:</strong> Arctic foxes grow extra thick, white fur in winter to stay warm and blend in with snow. In summer, their fur becomes thinner and brown!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐸</div>
+                        <p class="clickable-audio"><strong>Frogs Go Dormant:</strong> Frogs burrow into mud at the bottom of ponds when it gets cold. Their bodies slow down and they barely breathe until spring returns!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Lizards Bask in Sun:</strong> When it's cold, lizards lie on warm rocks in the sunshine. This helps them warm up their bodies so they can move and hunt!</p>
+                    </div>
+                </div>
+
+                <h3>🏙️ Adapting to Human Changes</h3>
+                <p class="clickable-audio">
+                    Some animals have learned to adapt to cities and human neighborhoods in clever ways!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">City Animals:</h4>
+                    <p class="clickable-audio">
+                        <strong>🦝 Raccoons</strong> have learned to open garbage cans and find food in cities. They're very smart and use their paws like hands!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🐦 Pigeons</strong> nest on buildings instead of cliffs. They eat food scraps people drop and can live almost anywhere!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🦊 Urban Foxes</strong> have moved into some cities. They hunt at night when it's quiet and find shelter in parks and gardens.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Match Animals to Their Adaptations!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each animal to the correct adaptation behavior!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b12-drag-items">
+                        <h4>Animals:</h4>
+                        <div class="drag-item" draggable="true" data-category="hibernate">🐻 Bear</div>
+                        <div class="drag-item" draggable="true" data-category="migrate">🦆 Goose</div>
+                        <div class="drag-item" draggable="true" data-category="store">🐿️ Squirrel</div>
+                        <div class="drag-item" draggable="true" data-category="hibernate">🐸 Frog</div>
+                        <div class="drag-item" draggable="true" data-category="migrate">🦋 Monarch Butterfly</div>
+                        <div class="drag-item" draggable="true" data-category="store">🐝 Bee</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="hibernate">
+                            <h4>😴 Hibernate (Sleep Through Winter)</h4>
+                        </div>
+                        <div class="drop-zone" data-category="migrate">
+                            <h4>✈️ Migrate (Travel to Warm Places)</h4>
+                        </div>
+                        <div class="drop-zone" data-category="store">
+                            <h4>🥜 Store Food (Save for Winter)</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b12')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b12')">Start Over</button>
+                </div>
+                
+                <div id="b12-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. What does it mean when we say animals "adapt"?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They always stay exactly the same</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They change and adjust to survive in their environment</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They move to a different planet</span>
+                        </div>
+                    </div>
+                    <div id="b12-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. What do bears do to survive the winter when food is scarce?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They fly south to warmer places</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They hibernate - sleep through winter in dens</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They live in the ocean</span>
+                        </div>
+                    </div>
+                    <div id="b12-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. Why do many birds migrate south in the fall?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They want to see new places</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">To find warmth and food in winter</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They don't like their families</span>
+                        </div>
+                    </div>
+                    <div id="b12-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. How do squirrels prepare for winter?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They sleep all winter long</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They collect and hide nuts to eat later</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They don't need to prepare</span>
+                        </div>
+                    </div>
+                    <div id="b12-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. Which animal has adapted to live in cities by learning to open garbage cans?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Polar bears</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Raccoons</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Whales</span>
+                        </div>
+                    </div>
+                    <div id="b12-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b12')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b12-quiz-score"></div>
+            </div>
+        </section>
+
+        <!-- Unit B2.1: Animal Bodies -->
+        <section id="b21" class="unit">
+            <div class="content-card">
+                <h2>🦁 Amazing Animal Bodies!</h2>
+                
+                <p class="clickable-audio">
+                    Animals come in all shapes and sizes! From tiny insects to huge whales, every animal has special 
+                    body parts that help it survive. Let's explore the amazing physical characteristics of different animals!
+                </p>
+                
+                <p class="clickable-audio">
+                    Physical characteristics are the parts of an animal's body that you can see and touch, like fur, 
+                    feathers, scales, claws, wings, and tails!
+                </p>
+
+                <h3>🐾 Different Types of Animals</h3>
+                <p class="clickable-audio">
+                    Scientists group animals into different categories based on their body characteristics. Here are the main groups:
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Animal Groups:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦁 Mammals:</strong> Have fur or hair, give birth to live babies, and feed their babies milk. Examples: dogs, cats, bears, whales, humans!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐦 Birds:</strong> Have feathers, wings, a beak, and lay eggs. Most birds can fly, but some like penguins and ostriches cannot!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐍 Reptiles:</strong> Have dry, scaly skin and lay eggs on land. They are cold-blooded and love to warm up in the sun. Examples: snakes, turtles, lizards, crocodiles!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐸 Amphibians:</strong> Have smooth, wet skin and live both in water and on land. They start life in water with gills, then grow lungs. Examples: frogs, toads, salamanders!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐟 Fish:</strong> Live in water, have scales and fins, and breathe through gills. They are cold-blooded and lay eggs in water!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐛 Insects:</strong> Have six legs, three body parts, and often have wings. Examples: butterflies, bees, ants, beetles!
+                    </p>
+                </div>
+
+                <h3>👀 Special Body Parts</h3>
+                <p class="clickable-audio">
+                    Different animals have special body parts that help them do amazing things!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🦅</div>
+                        <p class="clickable-audio"><strong>Sharp Talons:</strong> Eagles have powerful claws called talons that help them catch and hold onto fish and small animals.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐘</div>
+                        <p class="clickable-audio"><strong>Long Trunk:</strong> Elephants use their long trunks like a hand to grab food, drink water, and spray themselves to stay cool!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦒</div>
+                        <p class="clickable-audio"><strong>Long Neck:</strong> Giraffes have very long necks that help them reach leaves high up in trees that other animals can't reach!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦘</div>
+                        <p class="clickable-audio"><strong>Strong Legs:</strong> Kangaroos have powerful back legs that help them jump really far - up to 30 feet in one hop!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦇</div>
+                        <p class="clickable-audio"><strong>Wings:</strong> Bats are the only mammals that can truly fly! Their wings are made of thin skin stretched between their finger bones.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐋</div>
+                        <p class="clickable-audio"><strong>Blubber:</strong> Whales have a thick layer of fat called blubber that keeps them warm in cold ocean water!</p>
+                    </div>
+                </div>
+
+                <h3>🎨 Body Coverings</h3>
+                <p class="clickable-audio">
+                    Animals have different coverings on their bodies that protect them and help them survive!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Types of Body Coverings:</h4>
+                    <p class="clickable-audio">
+                        <strong>🐻 Fur:</strong> Keeps mammals warm and dry. Polar bears have thick white fur to stay warm in the Arctic!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🪶 Feathers:</strong> Help birds fly and stay warm. They are light but very strong!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🐟 Scales:</strong> Hard, overlapping plates protect fish and reptiles. Fish scales are slippery to help them swim fast!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🐸 Smooth Skin:</strong> Amphibians have moist skin that helps them breathe through their skin when in water!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🐞 Exoskeleton:</strong> Insects have a hard shell on the outside of their bodies that protects them like armor!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Match Body Parts to Animals!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each body characteristic to the correct animal group!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b21-drag-items">
+                        <h4>Body Characteristics:</h4>
+                        <div class="drag-item" draggable="true" data-category="mammals">🐻 Has fur and feeds babies milk</div>
+                        <div class="drag-item" draggable="true" data-category="birds">🪶 Has feathers and wings</div>
+                        <div class="drag-item" draggable="true" data-category="fish">🐟 Has scales and fins, lives in water</div>
+                        <div class="drag-item" draggable="true" data-category="reptiles">🦎 Has dry scaly skin, lays eggs on land</div>
+                        <div class="drag-item" draggable="true" data-category="insects">🐝 Has six legs and three body parts</div>
+                        <div class="drag-item" draggable="true" data-category="mammals">🐋 Lives in ocean but breathes air</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="mammals">
+                            <h4>🦁 Mammals</h4>
+                        </div>
+                        <div class="drop-zone" data-category="birds">
+                            <h4>🐦 Birds</h4>
+                        </div>
+                        <div class="drop-zone" data-category="fish">
+                            <h4>🐟 Fish</h4>
+                        </div>
+                        <div class="drop-zone" data-category="reptiles">
+                            <h4>🐍 Reptiles</h4>
+                        </div>
+                        <div class="drop-zone" data-category="insects">
+                            <h4>🐛 Insects</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b21')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b21')">Start Over</button>
+                </div>
+                
+                <div id="b21-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. Which body covering do birds have?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Scales</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Feathers</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Fur</span>
+                        </div>
+                    </div>
+                    <div id="b21-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. What special body part does an elephant use to grab food and drink water?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Its tail</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Its trunk</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Its ears</span>
+                        </div>
+                    </div>
+                    <div id="b21-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. How many legs do insects have?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Four legs</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Six legs</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Eight legs</span>
+                        </div>
+                    </div>
+                    <div id="b21-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. What keeps whales warm in cold ocean water?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Feathers</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Blubber (thick layer of fat)</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Scales</span>
+                        </div>
+                    </div>
+                    <div id="b21-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. Which animals have smooth, wet skin and live both in water and on land?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Reptiles</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Amphibians (like frogs)</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Insects</span>
+                        </div>
+                    </div>
+                    <div id="b21-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b21')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b21-quiz-score"></div>
+            </div>
+        </section>
+
+        <!-- Unit B2.2: Body Adaptations -->
+        <section id="b22" class="unit">
+            <div class="content-card">
+                <h2>🦎 Body Parts That Help Animals Survive!</h2>
+                
+                <p class="clickable-audio">
+                    An adaptation is a special body part, shape, or behavior that helps an animal survive in its environment. 
+                    Every animal has amazing adaptations that help it find food, stay safe, and live in its habitat!
+                </p>
+                
+                <p class="clickable-audio">
+                    Adaptations develop over a very long time. Animals that have helpful adaptations are more likely to survive 
+                    and have babies, passing those helpful features to the next generation!
+                </p>
+
+                <h3>🦅 Adaptations for Finding Food</h3>
+                <p class="clickable-audio">
+                    Many animals have special body parts that help them catch or find their food!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🦅</div>
+                        <p class="clickable-audio"><strong>Eagles - Sharp Vision:</strong> Eagles can see a rabbit from 2 miles away! Their amazing eyes help them spot prey from high in the sky.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦒</div>
+                        <p class="clickable-audio"><strong>Giraffes - Long Neck:</strong> A giraffe's long neck helps it reach leaves other animals can't. This means less competition for food!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐻</div>
+                        <p class="clickable-audio"><strong>Bears - Sharp Claws:</strong> Bears have long, sharp claws perfect for digging up roots, catching fish, and climbing trees to find honey!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Chameleons - Long Tongue:</strong> A chameleon's tongue can shoot out super fast to catch insects from far away - faster than you can blink!</p>
+                    </div>
+                </div>
+
+                <h3>🛡️ Adaptations for Protection</h3>
+                <p class="clickable-audio">
+                    Animals have clever ways to protect themselves from predators (animals that might eat them)!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Ways Animals Stay Safe:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦔 Porcupines - Sharp Quills:</strong> Porcupines have thousands of sharp quills (like stiff needles) covering their back. If a predator tries to attack, it gets poked!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐢 Turtles - Hard Shell:</strong> A turtle can pull its head, legs, and tail inside its hard shell for protection. The shell acts like a mobile home and armor!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦨 Skunks - Bad Smell:</strong> When threatened, skunks spray a terrible-smelling liquid from glands under their tail. Predators quickly learn to stay away!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦎 Lizards - Tail Breaking:</strong> Some lizards can break off their own tail if grabbed by a predator! The tail wiggles around to distract the predator while the lizard escapes. The tail grows back later!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐙 Octopus - Camouflage:</strong> Octopuses can change their color and texture to match their surroundings in seconds. This helps them hide from both predators and prey!
+                    </p>
+                </div>
+
+                <h3>🏃 Adaptations for Movement</h3>
+                <p class="clickable-audio">
+                    Different animals move in special ways that help them survive in their environments!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🐆</div>
+                        <p class="clickable-audio"><strong>Cheetahs - Speed:</strong> Cheetahs are the fastest land animals! Their long legs and flexible spine help them run up to 70 mph to catch prey.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦘</div>
+                        <p class="clickable-audio"><strong>Kangaroos - Hopping:</strong> Kangaroos have powerful back legs for hopping. This saves energy when traveling long distances across Australia!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐧</div>
+                        <p class="clickable-audio"><strong>Penguins - Swimming:</strong> Penguins can't fly in air, but they "fly" underwater! Their flipper-like wings help them swim fast to catch fish.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Geckos - Sticky Feet:</strong> Geckos have special toe pads that stick to walls and ceilings! They can walk upside down on smooth surfaces.</p>
+                    </div>
+                </div>
+
+                <h3>🌡️ Adaptations for Temperature</h3>
+                <p class="clickable-audio">
+                    Animals have amazing ways to stay warm or cool in different climates!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Staying Comfortable:</h4>
+                    <p class="clickable-audio">
+                        <strong>🐘 Elephants - Big Ears:</strong> Elephants flap their huge ears to cool down. The ears have lots of blood vessels that release heat!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🐻‍❄️ Polar Bears - Thick Fur:</strong> Polar bears have two layers of fur plus a layer of fat to stay warm in freezing Arctic temperatures!
+                    </p>
+                    <p class="clickable-audio">
+                        <strong>🦊 Arctic Foxes - Small Ears:</strong> Arctic foxes have small, round ears to prevent heat loss in the cold. Desert foxes have big ears to release heat!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Match Adaptations to Their Purpose!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each adaptation to what it helps the animal do!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b22-drag-items">
+                        <h4>Adaptations:</h4>
+                        <div class="drag-item" draggable="true" data-category="food">🦅 Eagle's sharp eyes</div>
+                        <div class="drag-item" draggable="true" data-category="protection">🐢 Turtle's hard shell</div>
+                        <div class="drag-item" draggable="true" data-category="food">🦒 Giraffe's long neck</div>
+                        <div class="drag-item" draggable="true" data-category="protection">🦨 Skunk's bad smell</div>
+                        <div class="drag-item" draggable="true" data-category="movement">🐆 Cheetah's long legs</div>
+                        <div class="drag-item" draggable="true" data-category="movement">🦘 Kangaroo's strong back legs</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="food">
+                            <h4>🍽️ Finding Food</h4>
+                        </div>
+                        <div class="drop-zone" data-category="protection">
+                            <h4>🛡️ Protection from Predators</h4>
+                        </div>
+                        <div class="drop-zone" data-category="movement">
+                            <h4>🏃 Moving Around</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b22')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b22')">Start Over</button>
+                </div>
+                
+                <div id="b22-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. What is an adaptation?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">A toy that animals play with</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">A special body part, shape, or behavior that helps an animal survive</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">A place where animals sleep</span>
+                        </div>
+                    </div>
+                    <div id="b22-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. How does a giraffe's long neck help it survive?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">It helps the giraffe swim faster</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">It helps the giraffe reach leaves high in trees that other animals can't reach</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">It helps the giraffe fly</span>
+                        </div>
+                    </div>
+                    <div id="b22-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. What does a turtle do when it feels threatened?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">It runs away very fast</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">It pulls its head and legs inside its hard shell</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">It climbs a tree</span>
+                        </div>
+                    </div>
+                    <div id="b22-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. Why do elephants flap their big ears?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">To fly away</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">To cool down and release heat</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">To scare away flies only</span>
+                        </div>
+                    </div>
+                    <div id="b22-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. What amazing thing can an octopus do to hide from predators?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Grow wings and fly away</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Change its color and texture to blend in with its surroundings</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Become invisible completely</span>
+                        </div>
+                    </div>
+                    <div id="b22-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b22')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b22-quiz-score"></div>
+            </div>
+        </section>
+
+        <!-- Unit B2.3: Life Cycles -->
+        <section id="b23" class="unit">
+            <div class="content-card">
+                <h2>🐛 Amazing Animal Life Cycles!</h2>
+                
+                <p class="clickable-audio">
+                    Every animal goes through changes as it grows up! This journey from birth to being an adult is called a 
+                    <strong>life cycle</strong>. Some animals look very different at different stages of their life!
+                </p>
+                
+                <p class="clickable-audio">
+                    A complete life cycle means an animal goes through big changes in how it looks and acts as it grows. 
+                    This is called <strong>metamorphosis</strong>. Let's explore some amazing transformations!
+                </p>
+
+                <h3>🦋 Butterfly Life Cycle - Complete Metamorphosis</h3>
+                <p class="clickable-audio">
+                    Butterflies go through one of the most amazing transformations in nature! They have four completely different stages:
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">The Four Stages of a Butterfly:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>1. 🥚 Egg:</strong> A butterfly starts as a tiny egg, smaller than a grain of rice! The mother butterfly lays eggs on a leaf. After about 3-5 days, the egg hatches.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>2. 🐛 Caterpillar (Larva):</strong> A hungry caterpillar comes out of the egg! The caterpillar eats leaves all day and night. It grows bigger and bigger, shedding its skin several times. This stage lasts about 2 weeks.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>3. 🏠 Chrysalis (Pupa):</strong> The caterpillar forms a hard shell called a chrysalis around itself. Inside, an amazing change happens! The caterpillar's body completely transforms. This takes about 10 days.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>4. 🦋 Adult Butterfly:</strong> The chrysalis opens and a beautiful butterfly emerges! It pumps fluid into its wings to make them strong. Now it can fly, drink nectar from flowers, and lay eggs to start the cycle again!
+                    </p>
+                </div>
+
+                <h3>🐸 Frog Life Cycle - Another Complete Change!</h3>
+                <p class="clickable-audio">
+                    Frogs also go through a complete metamorphosis, but they do it in water first!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🥚</div>
+                        <p class="clickable-audio"><strong>Stage 1: Eggs</strong> - Mother frog lays hundreds of tiny eggs in jelly in the water. After 1-3 weeks, they hatch!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐟</div>
+                        <p class="clickable-audio"><strong>Stage 2: Tadpole</strong> - Baby frogs are called tadpoles! They look like tiny fish with tails. They breathe through gills and swim in water.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Stage 3: Tadpole with Legs</strong> - Back legs grow first, then front legs! The tadpole starts to develop lungs to breathe air.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐸</div>
+                        <p class="clickable-audio"><strong>Stage 4: Young Frog</strong> - The tail shrinks away, lungs are fully developed, and now it can hop on land! It takes 12-16 weeks to become a frog.</p>
+                    </div>
+                </div>
+
+                <h3>🐔 Animals Without Complete Metamorphosis</h3>
+                <p class="clickable-audio">
+                    Not all animals change completely as they grow! Some animals, like chickens, look similar when they're born as they do when they're adults - just smaller!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Chicken Life Cycle:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>1. 🥚 Egg:</strong> Mother hen lays an egg and sits on it to keep it warm for 21 days.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>2. 🐣 Chick Hatches:</strong> A baby chick pecks its way out! It's covered in soft, fluffy yellow feathers called down.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>3. 🐥 Growing Chick:</strong> The chick grows bigger and its fluffy down is replaced by adult feathers. It already looks like a tiny chicken!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>4. 🐔 Adult Chicken:</strong> After 4-5 months, the chicken is fully grown. Now it can lay eggs to start the cycle over!
+                    </p>
+                </div>
+
+                <h3>🐢 More Amazing Life Cycles!</h3>
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🐝</div>
+                        <p class="clickable-audio"><strong>Bees:</strong> Eggs → Larva → Pupa → Adult bee! Worker bees only live 6 weeks, but queen bees can live for years!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Lizards:</strong> Eggs → Baby lizards that look like tiny adults! They just need to grow bigger. Some lizards give birth to live babies!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦘</div>
+                        <p class="clickable-audio"><strong>Kangaroos:</strong> Tiny baby (joey) is born, then crawls into mom's pouch! It grows in the pouch for 6-8 months before coming out.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Order the Butterfly Life Cycle!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag the stages in the correct order from first to last!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b23-drag-items">
+                        <h4>Life Cycle Stages:</h4>
+                        <div class="drag-item" draggable="true" data-category="3">🦋 Adult Butterfly - Flies and lays eggs</div>
+                        <div class="drag-item" draggable="true" data-category="2">🏠 Chrysalis - Transformation happens inside</div>
+                        <div class="drag-item" draggable="true" data-category="1">🐛 Caterpillar - Eats lots of leaves</div>
+                        <div class="drag-item" draggable="true" data-category="0">🥚 Egg - Tiny egg on a leaf</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="0">
+                            <h4>1️⃣ First Stage</h4>
+                        </div>
+                        <div class="drop-zone" data-category="1">
+                            <h4>2️⃣ Second Stage</h4>
+                        </div>
+                        <div class="drop-zone" data-category="2">
+                            <h4>3️⃣ Third Stage</h4>
+                        </div>
+                        <div class="drop-zone" data-category="3">
+                            <h4>4️⃣ Fourth Stage</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b23')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b23')">Start Over</button>
+                </div>
+                
+                <div id="b23-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. What is a life cycle?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">A bicycle that animals ride</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">The stages an animal goes through from birth to being an adult</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">A special type of food</span>
+                        </div>
+                    </div>
+                    <div id="b23-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. What does a caterpillar turn into inside the chrysalis?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">A bigger caterpillar</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">A beautiful butterfly</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">A bird</span>
+                        </div>
+                    </div>
+                    <div id="b23-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. What are baby frogs called?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Chicks</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Tadpoles</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Kittens</span>
+                        </div>
+                    </div>
+                    <div id="b23-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. How do tadpoles breathe when they first hatch?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Through their skin only</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Through gills, just like fish</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They don't need to breathe</span>
+                        </div>
+                    </div>
+                    <div id="b23-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. When a baby chick hatches, does it look like its parents?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">No, it looks completely different like a caterpillar</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Yes, it looks like a tiny chicken with fluffy feathers</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">It looks like a fish first</span>
+                        </div>
+                    </div>
+                    <div id="b23-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b23')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b23-quiz-score"></div>
+            </div>
+        </section>
+
+        <!-- Unit B2.4: Surviving Changes -->
+        <section id="b24" class="unit">
+            <div class="content-card">
+                <h2>💪 How Animals Survive Changes!</h2>
+                
+                <p class="clickable-audio">
+                    Animals are survivors! When their environment changes, they find ways to adapt and keep living. 
+                    Let's learn about the amazing ways animals adjust to survive different changes in their habitats!
+                </p>
+                
+                <p class="clickable-audio">
+                    Changes in the environment can be quick (like a sudden storm) or slow (like seasons changing). 
+                    Animals have developed special behaviors and body features to help them survive both kinds of changes!
+                </p>
+
+                <h3>❄️ Surviving Cold Weather</h3>
+                <p class="clickable-audio">
+                    Winter can be very difficult for animals! There's less food, it's freezing cold, and water might freeze. 
+                    Here's how different animals survive:
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Winter Survival Strategies:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐻 Hibernation:</strong> Bears, groundhogs, and some bats sleep through winter! They eat lots of food in fall to get fat. Their body temperature drops, heart rate slows down, and they barely breathe. They live off their stored fat until spring!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>✈️ Migration:</strong> Many birds fly hundreds or thousands of miles to warmer places! Geese, ducks, and monarch butterflies travel south where it's warm and there's plenty of food. They come back in spring!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦊 Growing Thick Fur:</strong> Foxes, rabbits, and deer grow thicker, warmer fur coats in fall. In spring, they shed this heavy coat. Some animals like arctic foxes even change color - white in winter to blend with snow, brown in summer!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐿️ Food Storage:</strong> Squirrels and chipmunks collect nuts, seeds, and acorns in fall. They hide food in many secret spots and remember where it is. In winter, they dig up their stored food when they're hungry!
+                    </p>
+                </div>
+
+                <h3>🌵 Surviving Hot, Dry Weather</h3>
+                <p class="clickable-audio">
+                    Desert animals face extreme heat and very little water. They have amazing adaptations!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🐪</div>
+                        <p class="clickable-audio"><strong>Camels:</strong> Store fat in their humps (not water!). They can go days without drinking. Their wide feet help them walk on hot sand without sinking!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦎</div>
+                        <p class="clickable-audio"><strong>Desert Lizards:</strong> Stay in burrows during the hottest part of the day. They come out at night or early morning when it's cooler to hunt for food!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦊</div>
+                        <p class="clickable-audio"><strong>Fennec Foxes:</strong> Have huge ears that release heat to keep them cool! They also have furry feet to protect from hot sand.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🦂</div>
+                        <p class="clickable-audio"><strong>Scorpions:</strong> Come out only at night when it's cool. They can survive on very little food and water for months!</p>
+                    </div>
+                </div>
+
+                <h3>💧 Surviving Droughts (No Rain)</h3>
+                <p class="clickable-audio">
+                    When there's no rain for a long time, water dries up and plants die. Animals have to find creative ways to survive!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Drought Survival:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐘 Elephants Remember:</strong> Elephants have amazing memories! They remember where waterholes are, even if they haven't been there for years. In droughts, they lead their families to these special water sources.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐸 Frogs Go Dormant:</strong> Some frogs burrow deep into mud and create a protective coating around themselves. They slow down their body functions and wait underground until rain comes - sometimes for months!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦘 Kangaroos Adjust:</strong> Kangaroos can slow down their reproduction when there's not enough food or water. They wait until conditions are better to have babies!
+                    </p>
+                </div>
+
+                <h3>🌊 Surviving Floods and Too Much Water</h3>
+                <p class="clickable-audio">
+                    Heavy rains and floods can also be dangerous! Animals need ways to escape rising water.
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🦆</div>
+                        <p class="clickable-audio"><strong>Water Birds:</strong> Ducks and geese love floods! They swim to new areas and find lots of food. Their waterproof feathers keep them dry and warm.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐿️</div>
+                        <p class="clickable-audio"><strong>Tree Animals:</strong> Squirrels and monkeys climb to higher branches when water rises. They wait safely in the trees until the flood goes down.</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐜</div>
+                        <p class="clickable-audio"><strong>Ants:</strong> Fire ants link their bodies together to form a floating raft! They drift on water until they find dry land. The queen is protected in the middle!</p>
+                    </div>
+                </div>
+
+                <h3>🏗️ Surviving Habitat Loss</h3>
+                <p class="clickable-audio">
+                    When humans build on animal habitats, animals must adapt or move to new areas!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Adapting to Humans:</h4>
+                    <p class="clickable-audio">
+                        Some animals have learned to live near people! Raccoons, coyotes, and pigeons now thrive in cities. 
+                        They find food in garbage, build homes in attics or buildings, and learn to avoid traffic. These animals 
+                        are very smart and flexible - they changed their behavior to survive in a new environment!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Match Survival Strategies!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each animal to the survival strategy it uses!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b24-drag-items">
+                        <h4>Animals:</h4>
+                        <div class="drag-item" draggable="true" data-category="hibernate">🐻 Bear in winter</div>
+                        <div class="drag-item" draggable="true" data-category="migrate">🦆 Goose in fall</div>
+                        <div class="drag-item" draggable="true" data-category="store">🐿️ Squirrel in autumn</div>
+                        <div class="drag-item" draggable="true" data-category="thick-fur">🦊 Arctic fox in winter</div>
+                        <div class="drag-item" draggable="true" data-category="hibernate">🐸 Frog in drought</div>
+                        <div class="drag-item" draggable="true" data-category="migrate">🦋 Monarch butterfly in fall</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="hibernate">
+                            <h4>😴 Hibernate or Go Dormant</h4>
+                        </div>
+                        <div class="drop-zone" data-category="migrate">
+                            <h4>✈️ Migrate to Warmer Places</h4>
+                        </div>
+                        <div class="drop-zone" data-category="store">
+                            <h4>🥜 Store Food for Winter</h4>
+                        </div>
+                        <div class="drop-zone" data-category="thick-fur">
+                            <h4>🧥 Grow Thick Fur</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b24')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b24')">Start Over</button>
+                </div>
+                
+                <div id="b24-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. What do bears do to survive the cold winter when food is scarce?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They migrate to warm places</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They hibernate - sleep through winter using stored fat</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They build fires to stay warm</span>
+                        </div>
+                    </div>
+                    <div id="b24-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. Why do squirrels collect and hide nuts in the fall?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Just for fun</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">To have food stored for winter when food is hard to find</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">To share with other animals</span>
+                        </div>
+                    </div>
+                    <div id="b24-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. How do camels survive in the hot desert with little water?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They drink from the ocean</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They store fat in their humps and can go days without drinking</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They never need water</span>
+                        </div>
+                    </div>
+                    <div id="b24-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. What amazing thing do fire ants do when there's a flood?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They fly away</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They link their bodies together to form a floating raft</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They swim to the bottom</span>
+                        </div>
+                    </div>
+                    <div id="b24-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. How have raccoons adapted to survive in cities near humans?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They moved back to forests</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They learned to find food in garbage and build homes in buildings</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They stopped eating</span>
+                        </div>
+                    </div>
+                    <div id="b24-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b24')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b24-quiz-score"></div>
+            </div>
+        </section>
+
+        <!-- Unit B2.5: Helping Animals -->
+        <section id="b25" class="unit">
+            <div class="content-card">
+                <h2>💚 How We Can Help Animals!</h2>
+                
+                <p class="clickable-audio">
+                    We learned how humans can hurt animal habitats, but the good news is we can also help! 
+                    There are many wonderful things people of all ages can do to protect animals and their homes!
+                </p>
+                
+                <p class="clickable-audio">
+                    Every action counts, no matter how small! When we work together to help animals, we make a big difference. 
+                    Let's explore all the ways we can be animal heroes!
+                </p>
+
+                <h3>🏡 Creating Safe Habitats</h3>
+                <p class="clickable-audio">
+                    We can create spaces where animals can live safely, even in our own backyards and communities!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Building Homes for Animals:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🏠 Birdhouses and Bat Houses:</strong> We can build or buy small houses for birds and bats! Hang them in trees or on poles. Birds use them to build nests and raise babies. Bats use them to sleep during the day!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🐝 Bee Hotels:</strong> Make homes for solitary bees! Bundle hollow bamboo sticks together or drill holes in wood blocks. Bees use these holes to lay eggs. Bees are important because they pollinate flowers!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🪵 Log Piles:</strong> Leave a pile of logs or branches in a corner of your yard. Beetles, salamanders, and small mammals use them for shelter!
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🦔 Brush Piles:</strong> Pile up leaves, twigs, and grass clippings. Rabbits, hedgehogs, and toads hide in them to stay safe from predators!
+                    </p>
+                </div>
+
+                <h3>🌸 Planting for Wildlife</h3>
+                <p class="clickable-audio">
+                    Plants provide food and shelter for many animals! We can plant gardens that help wildlife thrive.
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">🌻</div>
+                        <p class="clickable-audio"><strong>Native Flowers:</strong> Plant flowers that grow naturally in your area. Butterflies, bees, and hummingbirds visit them for nectar!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🌳</div>
+                        <p class="clickable-audio"><strong>Trees and Shrubs:</strong> Trees give animals places to nest, hide, and find food. Birds eat berries from bushes in fall and winter!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">💧</div>
+                        <p class="clickable-audio"><strong>Water Sources:</strong> Put out a birdbath or shallow dish of water. Change it often so it stays clean. Animals need water to drink!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🌿</div>
+                        <p class="clickable-audio"><strong>Let It Grow Wild:</strong> Leave some parts of your yard natural! Tall grass and wildflowers provide homes for insects, which feed birds and other animals.</p>
+                    </div>
+                </div>
+
+                <h3>♻️ Reducing Waste and Pollution</h3>
+                <p class="clickable-audio">
+                    Keeping our environment clean helps animals stay healthy and safe!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Ways to Reduce Harm:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🗑️ Pick Up Litter:</strong> Trash can hurt animals! Birds get tangled in plastic, and sea turtles eat plastic bags thinking they're jellyfish. Always throw garbage in trash cans and pick up litter you see.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>♻️ Recycle:</strong> Recycle plastic, paper, and cans! This means less trash in animal habitats and less pollution in oceans and forests.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🛍️ Use Reusable Bags:</strong> Bring reusable bags when shopping instead of using plastic bags. Plastic bags can blow into rivers and oceans where they harm sea life.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🧴 Choose Safe Products:</strong> Ask your family to use eco-friendly cleaning products and soaps. Chemicals from harsh cleaners can wash into streams and hurt fish and frogs!
+                    </p>
+                </div>
+
+                <h3>🦆 Being a Good Wildlife Neighbor</h3>
+                <p class="clickable-audio">
+                    When we encounter animals, we should respect them and keep them safe!
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-item">
+                        <div class="icon">📸</div>
+                        <p class="clickable-audio"><strong>Observe from Distance:</strong> Watch wild animals from far away. Don't try to touch or feed them. Wild animals can bite and might get sick from human food!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🐕</div>
+                        <p class="clickable-audio"><strong>Keep Pets Supervised:</strong> Keep dogs on leashes in parks. Cats should stay indoors where they're safe and can't hunt birds!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🚗</div>
+                        <p class="clickable-audio"><strong>Drive Carefully:</strong> Ask adults to drive slowly, especially near woods and water. Many animals cross roads and need time to get across safely!</p>
+                    </div>
+                    <div class="example-item">
+                        <div class="icon">🌙</div>
+                        <p class="clickable-audio"><strong>Turn Off Lights:</strong> At night, turn off outdoor lights when not needed. Bright lights confuse birds, sea turtles, and insects!</p>
+                    </div>
+                </div>
+
+                <h3>🌍 Protecting Natural Areas</h3>
+                <p class="clickable-audio">
+                    We can help protect wild places where animals live!
+                </p>
+
+                <div class="example-box">
+                    <h4 class="clickable-audio">Conservation Actions:</h4>
+                    
+                    <p class="clickable-audio">
+                        <strong>🏞️ Visit Parks and Nature Reserves:</strong> When families visit parks, the money from tickets helps protect these areas! Stay on trails so you don't disturb animal homes.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>🌳 Plant Trees:</strong> Join tree-planting events in your community! Trees clean the air, provide homes for animals, and help fight climate change.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>📚 Learn and Teach:</strong> Learn about animals and share what you know! When more people understand animals, more people want to protect them.
+                    </p>
+                    
+                    <p class="clickable-audio">
+                        <strong>💰 Support Wildlife Groups:</strong> Some organizations work to save endangered animals and protect habitats. Your family can donate or participate in their events!
+                    </p>
+                </div>
+
+                <h3>⭐ You Can Make a Difference!</h3>
+                <p class="clickable-audio">
+                    Remember, you don't have to do everything at once! Even small actions help. Start with one thing, like picking up litter 
+                    or building a birdhouse. Every little bit counts, and together we can make the world a better place for all animals!
+                </p>
+            </div>
+
+            <!-- Drag and Drop Activity -->
+            <div class="activity-section">
+                <h3>🎯 Activity: Ways to Help Animals!</h3>
+                <p class="clickable-audio" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem;">
+                    Drag each action to show whether it helps animals at HOME or in the COMMUNITY!
+                </p>
+                
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="b25-drag-items">
+                        <h4>Helpful Actions:</h4>
+                        <div class="drag-item" draggable="true" data-category="home">🏠 Build a birdhouse in your yard</div>
+                        <div class="drag-item" draggable="true" data-category="community">🌳 Join a tree-planting event</div>
+                        <div class="drag-item" draggable="true" data-category="home">💧 Put out a birdbath with fresh water</div>
+                        <div class="drag-item" draggable="true" data-category="community">🗑️ Pick up litter at the park</div>
+                        <div class="drag-item" draggable="true" data-category="home">🌻 Plant native flowers in your garden</div>
+                        <div class="drag-item" draggable="true" data-category="community">🏞️ Visit and support nature reserves</div>
+                    </div>
+                    
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-category="home">
+                            <h4>🏡 Help at Home</h4>
+                        </div>
+                        <div class="drop-zone" data-category="community">
+                            <h4>🌍 Help in the Community</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-controls">
+                    <button class="btn" onclick="checkDragDrop('b25')">Check My Answers!</button>
+                    <button class="btn secondary" onclick="resetDragDrop('b25')">Start Over</button>
+                </div>
+                
+                <div id="b25-drag-feedback" class="feedback"></div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="quiz-section">
+                <h3>📝 Quiz Time! Test Your Knowledge</h3>
+                
+                <div class="question" data-question="0">
+                    <p class="question-text clickable-audio">
+                        1. Why is it helpful to build birdhouses?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Birds use them to play games</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Birds use them to build nests and raise their babies safely</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Birds use them to store food only</span>
+                        </div>
+                    </div>
+                    <div id="b25-q0-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="1">
+                    <p class="question-text clickable-audio">
+                        2. What should you do if you see litter on the ground?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Leave it there for someone else</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Pick it up and throw it in a trash can to keep animals safe</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Throw more litter on the ground</span>
+                        </div>
+                    </div>
+                    <div id="b25-q1-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="2">
+                    <p class="question-text clickable-audio">
+                        3. Why should you plant native flowers in your garden?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">They are just pretty to look at</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">They provide food and shelter for local butterflies, bees, and other wildlife</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">They grow faster than other flowers</span>
+                        </div>
+                    </div>
+                    <div id="b25-q2-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="3">
+                    <p class="question-text clickable-audio">
+                        4. What is one way to help sea turtles?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Catch them and keep them as pets</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Use reusable bags instead of plastic, and pick up beach litter</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Leave bright lights on at the beach</span>
+                        </div>
+                    </div>
+                    <div id="b25-q3-feedback" class="feedback"></div>
+                </div>
+
+                <div class="question" data-question="4">
+                    <p class="question-text clickable-audio">
+                        5. When you see wild animals in nature, what should you do?
+                    </p>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 0)">
+                            <span class="clickable-audio">Try to catch them and take them home</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 1)">
+                            <span class="clickable-audio">Watch them quietly from a distance and don't disturb them</span>
+                        </div>
+                        <div class="option" onclick="selectOption(this, 2)">
+                            <span class="clickable-audio">Feed them candy and chips</span>
+                        </div>
+                    </div>
+                    <div id="b25-q4-feedback" class="feedback"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn" onclick="checkQuiz('b25')">Check My Quiz!</button>
+                </div>
+                
+                <div id="b25-quiz-score"></div>
+            </div>
         </section>
     </main>
 
@@ -1017,6 +2550,7 @@
             event.target.classList.add('active');
             
             document.getElementById('main-nav').classList.add('hidden');
+            document.querySelector('main').classList.add('show');
             document.querySelector('.back-button').classList.add('show');
             
             window.scrollTo(0, 0);
@@ -1024,6 +2558,7 @@
 
         function showHome() {
             document.getElementById('main-nav').classList.remove('hidden');
+            document.querySelector('main').classList.remove('show');
             document.querySelector('.back-button').classList.remove('show');
             window.scrollTo(0, 0);
         }
@@ -1064,6 +2599,48 @@
                 { correct: 1 }, // plastic and turtles
                 { correct: 1 }, // planting trees helps
                 { correct: 1 }  // polar bears and ice
+            ],
+            b12: [
+                { correct: 1 }, // adapt definition
+                { correct: 1 }, // bears hibernate
+                { correct: 1 }, // birds migrate
+                { correct: 1 }, // squirrels store food
+                { correct: 1 }  // raccoons in cities
+            ],
+            b21: [
+                { correct: 1 }, // birds have feathers
+                { correct: 1 }, // elephant's trunk
+                { correct: 1 }, // insects have six legs
+                { correct: 1 }, // whale's blubber
+                { correct: 1 }  // amphibians
+            ],
+            b22: [
+                { correct: 1 }, // adaptation definition
+                { correct: 1 }, // giraffe's neck
+                { correct: 1 }, // turtle's shell
+                { correct: 1 }, // elephant's ears
+                { correct: 1 }  // octopus camouflage
+            ],
+            b23: [
+                { correct: 1 }, // life cycle definition
+                { correct: 1 }, // caterpillar to butterfly
+                { correct: 1 }, // tadpoles
+                { correct: 1 }, // tadpoles breathe with gills
+                { correct: 1 }  // chick looks like parents
+            ],
+            b24: [
+                { correct: 1 }, // bears hibernate
+                { correct: 1 }, // squirrels store food
+                { correct: 1 }, // camels store fat
+                { correct: 1 }, // ants form raft
+                { correct: 1 }  // raccoons adapt to cities
+            ],
+            b25: [
+                { correct: 1 }, // birdhouses for nests
+                { correct: 1 }, // pick up litter
+                { correct: 1 }, // native flowers
+                { correct: 1 }, // reusable bags for turtles
+                { correct: 1 }  // watch from distance
             ]
         };
 
